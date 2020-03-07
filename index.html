@@ -185,7 +185,16 @@
               <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 13:12:16" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 13:33:17" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端技術筆記</span></a>
+                </span>
             </span>
 
           
@@ -201,46 +210,14 @@
       
           <p>一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就可以了。</p>
 <p>安裝了 jqeury，也把 bootstrap 匯入 Vue 專案中後，我們就可以把 modal 這個元件寫到 Vue 元件的 template 部分裡，不需要額外寫其他程式碼，這個 modal 就會運行了。這部分和我們一般在寫 bootstrap 時一樣。</p>
-<h2 id="兩種使用-bootstrap-的-JS-元件方法，以-modal-為例"><a href="#兩種使用-bootstrap-的-JS-元件方法，以-modal-為例" class="headerlink" title="兩種使用 bootstrap 的 JS 元件方法，以 modal 為例"></a>兩種使用 bootstrap 的 JS 元件方法，以 modal 為例</h2><p>在 bootstrap 的 modal 使用說明中，該篇文章的結語部分，提到「有兩種使用 modal 的方法」：</p>
-<ol>
-<li>透過 data-* 屬性 ( 把 bootstrap 提供的 HTML 貼到自己的 HTML 檔裡 )</li>
-<li>透過 JavaScript ( 部分自己寫 JS 程式碼、部分使用 bootstrap 寫好的程式碼 )</li>
-</ol>
-<h2 id="透過-data-屬性"><a href="#透過-data-屬性" class="headerlink" title="透過 data-* 屬性"></a>透過 data-* 屬性</h2><p>透過 data-* 屬性是一般使用 modal 的方法。透過 bootstrap 提供的 HTML 程式碼在網頁中使用 modal 這個元件 。這段程式碼裡，包含了 data-toggle 和 data-target 兩個屬性，我們便是透過這兩個屬性讓 bootstrap 的 JS 程式碼去選取 我們網頁的 DOM 元素。bootstrap 透過 data-toggle 選取相對應的事件觸發元素（例如，button），再透過 data-target 選取 modal 本身（那個跳出來的 div）。</p>
-<p>我們可以想像在 bootstrap 的 JS 程式碼中，可能是這樣：</p>
-<p>/* 這不是 bootstrap 的程式碼，是我猜測 bootstrap 可能會這樣寫：*/</p>
-<pre><code>const button = // 用 jquery 的方式選取有 data-toggle 的 DOM 元素 //
-const target = // data-target的值 //
-const modal = // 用 target 選取 DOM 元素，也就是 modal 本身 //
-
-button.addEventListener(&apos;click&apos;, toggleDOM(modal));
-
-function toggleDOM(modal){
-        // button被觸發後，modal的行為
-}</code></pre><h2 id="自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。"><a href="#自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。" class="headerlink" title="自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。"></a>自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。</h2><h3 id="jquery-的寫法、一些基本概念"><a href="#jquery-的寫法、一些基本概念" class="headerlink" title="jquery 的寫法、一些基本概念"></a>jquery 的寫法、一些基本概念</h3><p>由於 bootstrap 是使用 jquery 去撰寫 JS 元件的程式碼，所以在這部分我們一樣也是使用 jquery 的方法選取 DOM 元素。在一組 modal 中，我們需要兩個 DOM 元素：</p>
-<ol>
-<li>觸發的按鈕</li>
-<li>modal 本身</li>
-</ol>
-<p>因此，我們只要透過 jquery 的方式，選取這兩個 DOM 元素即可。</p>
-<pre><code>$(&apos;button&apos;).click(function(){
-            $(&apos;#myModal&apos;).modal(options); //這行是 bootstrap 提供的程式碼
-})</code></pre><p>在這邊我們會發現，不管是透過第一種 data的方法，還是 $(‘’) 這個方法，最主要的差別只是用不同的方式選取 DOM 元素。因為，我們已經用 $(‘’) 代替了 data-toggle 和 data-target 。所以，當我們使用第二種 $(‘’) 的方法時，我們就必須把 HTML 的程式碼中，data-* 的屬性拿掉。</p>
-<h3 id="在-Vue-cli-的元件中…"><a href="#在-Vue-cli-的元件中…" class="headerlink" title="在 Vue cli 的元件中…"></a>在 Vue cli 的元件中…</h3><p>概念上和 上述 jquery 的寫法差不多，就是用 Vue.js 的語法寫按鈕事件，只是在 methods 的部分，我們使用 jqeury 的方式選取 DOM，event handler 用的是 bootstrap 寫好的方法： </p>
-<pre><code>&lt;button @click=&quot;callModal&quot;&gt;
-
-//... 中間很多程式碼 ...//
-
-methods: {
-    callModal() {
-        $(&apos;#myModal&apos;).modal(&apos;options&apos;);
-        }
-}</code></pre><p>在這邊，如果使用了 ESlint 的話，可能會跳出錯誤訊息。這是因為，在這個元件中，我們並沒有定義 $ 是什麼。如果要解決這個方法，我們就需要把 $ 這個變數匯入元件當中：</p>
-<pre><code>import $ form &apos;jquery&apos;</code></pre><h2 id="為什麼要用第二種方法？"><a href="#為什麼要用第二種方法？" class="headerlink" title="為什麼要用第二種方法？"></a>為什麼要用第二種方法？</h2><p>透過第二種方法，我們就可以進一步使用其他方式決定 modal 跳出的時間，優化使用者體驗。例如，在第二種方法中，我們可以用 ajax 的方式，讓呼叫 modal 的按鈕在被觸發後，稍作等待，等待 ajax 取得資料後，再讓相對應的 modal 跳出。這樣做的用意，是為了確保 modal 有資料後，才會呈現給使用者。</p>
-<hr>
-<p>**關於在Vue cli 中使用 jquery 這篇文章有更詳細的說明：</p>
-<p><a href="https://pjchender.github.io/2017/09/26/vue-%E5%9C%A8-vue-%E4%B8%AD%E4%BD%BF%E7%94%A8%EF%BC%88es6-import%EF%BC%89-bootstrap4-%E5%92%8C-jquery/" target="_blank" rel="noopener">https://pjchender.github.io/2017/09/26/vue-在-vue-中使用（es6-import）-bootstrap4-和-jquery/</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -290,8 +267,17 @@ methods: {
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Bearbeitet am</span>
-                <time title="Geändert am: 2020-03-07 13:06:07" itemprop="dateModified" datetime="2020-03-07T13:06:07+08:00">2020-03-07</time>
+                <time title="Geändert am: 2020-03-07 13:35:07" itemprop="dateModified" datetime="2020-03-07T13:35:07+08:00">2020-03-07</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%83%A8%E8%90%BD%E6%A0%BC%E7%B6%93%E7%87%9F/" itemprop="url" rel="index"><span itemprop="name">部落格經營</span></a>
+                </span>
+            </span>
 
           
 
@@ -421,9 +407,24 @@ methods: {
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Veröffentlicht am</span>
-              
 
-              <time title="Erstellt: 2020-02-25 14:58:43 / Geändert am: 21:48:02" itemprop="dateCreated datePublished" datetime="2020-02-25T14:58:43+08:00">2020-02-25</time>
+              <time title="Erstellt: 2020-02-25 14:58:43" itemprop="dateCreated datePublished" datetime="2020-02-25T14:58:43+08:00">2020-02-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-03-07 13:32:24" itemprop="dateModified" datetime="2020-03-07T13:32:24+08:00">2020-03-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/" itemprop="url" rel="index"><span itemprop="name">生活紀錄</span></a>
+                </span>
             </span>
 
           
@@ -532,8 +533,14 @@ methods: {
           <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">Kategorien</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">schlagwörter</span>
       </div>
   </nav>

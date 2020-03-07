@@ -28,7 +28,7 @@
 <meta property="og:description" content="一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-03-07T05:07:22.000Z">
-<meta property="article:modified_time" content="2020-03-07T05:12:16.794Z">
+<meta property="article:modified_time" content="2020-03-07T05:33:17.474Z">
 <meta property="article:author" content="Myia">
 <meta name="twitter:card" content="summary">
 
@@ -188,7 +188,16 @@
               <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 13:12:16" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 13:33:17" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端技術筆記</span></a>
+                </span>
             </span>
 
           
@@ -204,6 +213,8 @@
       
         <p>一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就可以了。</p>
 <p>安裝了 jqeury，也把 bootstrap 匯入 Vue 專案中後，我們就可以把 modal 這個元件寫到 Vue 元件的 template 部分裡，不需要額外寫其他程式碼，這個 modal 就會運行了。這部分和我們一般在寫 bootstrap 時一樣。</p>
+<a id="more"></a>
+
 <h2 id="兩種使用-bootstrap-的-JS-元件方法，以-modal-為例"><a href="#兩種使用-bootstrap-的-JS-元件方法，以-modal-為例" class="headerlink" title="兩種使用 bootstrap 的 JS 元件方法，以 modal 為例"></a>兩種使用 bootstrap 的 JS 元件方法，以 modal 為例</h2><p>在 bootstrap 的 modal 使用說明中，該篇文章的結語部分，提到「有兩種使用 modal 的方法」：</p>
 <ol>
 <li>透過 data-* 屬性 ( 把 bootstrap 提供的 HTML 貼到自己的 HTML 檔裡 )</li>
@@ -339,8 +350,14 @@ methods: {
           <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">Kategorien</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">schlagwörter</span>
       </div>
   </nav>
