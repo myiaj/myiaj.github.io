@@ -1,365 +1,630 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-tw">
 <head>
-  <meta charset="utf-8">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    
-    Myia&#39;s blog</title>
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/main.css">
 
-  
-  
-<script src="/js/pace.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.0"></head>
-<body>
-<main class="content">
-  <section class="jumbotron">
-  <div class="video">
-    
-    <div class="video-frame">
-      <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
-    </div>
-    
-    <div class="video-media">
-      <video playsinline="" autoplay="" loop="" muted="" data-autoplay="" poster="/images/ocean/mountain.jpg"
-        x5-video-player-type="h5">
-        <img src="/images/ocean/mountain.jpg" alt="by paul millerd on unsplash">
-        <!-- <source src="/images/ocean/ocean.ogv" type="video/ogg">
-        <source src="/images/ocean/ocean.webm" type="video/webm"> -->
-        <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-    </div>
-    <div class="video-inner text-center text-white">
-      <h1><a href="/">Myia&#39;s blog</a></h1>
-      <p>前端技術紀錄、everything I know</p>
-      <div><img src="/images/hexo-inverted.svg" class="brand" alt="Myia&#39;s blog"></div>
-    </div>
-    <div class="video-learn-more">
-      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Myia&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Myia&#39;s blog">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Myia">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false
+  };
+</script>
+
+  <title>Myia's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
-</section>
-<div id="landingpage">
-  <section class="outer">
-    <article class="articles">
-      
-      <h1 class="page-type-title"></h1>
-      
-        
-          <article id="post-BERT_blogger觀點" class="article article-type-post" itemscope
-    itemprop="blogPost" data-scroll-reveal>
 
-    <div class="article-inner">
-        
-        <header class="article-header">
-            
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/">對於 Google BERT 演算法的感想：網站、部落客的觀點</a>
-    </h2>
-  
-  
+  <div class="site-meta">
 
-
-
-
-        </header>
-        
-
-        
-        <div class="article-meta">
-            <a href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/" class="article-date">
-  <time datetime="2020-03-03T06:17:51.000Z" itemprop="datePublished">2020-03-03</time>
-</a>
-            
-        </div>
-        
-
-        
-
-        <div class="article-entry" itemprop="articleBody">
-            
-
-
-            
-
-            
-            <p><a href="2020/03/03/how-to-get-traffic">前一篇文章</a>提到透過不同方式而來的讀者，大致上可能會有什麼樣的特性。這篇，想來分享一下 Google 最新的演算法。這一個月來，看到好幾篇文章都有寫到部落格流量突然掉下來。明明寫文章的風格和頻率都和以前一樣，怎麼忽然流量變得很低。其中有個因素是 Google 更改了演算法的規則。(這部分 Facebook、Instagram 的小編們應該也有相同的困擾，因為這兩家社群平台也在更動他們的演算法…)。</p>
-            
-            <a class="article-more-link" href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/">
-                Read More...
-            </a>
-            
-            
-        </div>
-        <footer class="article-footer">
-            <a data-url="http://yoursite.com/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/" data-id="ck7bik37v00007ow0cz2oe7r3" class="article-share-link">
-                Share
-            </a>
-            
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%83%A8%E8%90%BD%E6%A0%BC%E7%B6%93%E7%87%9F/" rel="tag">部落格經營</a></li></ul>
-
-        </footer>
-
-    </div>
-
-    
-
-    
-
-    <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-        data-width="90%" data-numposts="5"></div> -->
-</article>
-        
-          <article id="post-how-to-get-traffic" class="article article-type-post" itemscope
-    itemprop="blogPost" data-scroll-reveal>
-
-    <div class="article-inner">
-        
-        <header class="article-header">
-            
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/03/03/how-to-get-traffic/">部落格導入流量的一些想法記錄：平台和搜尋的不同</a>
-    </h2>
-  
-  
-
-
-
-
-        </header>
-        
-
-        
-        <div class="article-meta">
-            <a href="/2020/03/03/how-to-get-traffic/" class="article-date">
-  <time datetime="2020-03-03T06:16:35.000Z" itemprop="datePublished">2020-03-03</time>
-</a>
-            
-        </div>
-        
-
-        
-
-        <div class="article-entry" itemprop="articleBody">
-            
-
-
-            
-
-            
-            <p>最近在研究部落格經營。一方面是我自己也想寫，另一面正也和我準備投入的前端領域息息相關。多少了解一些，對工作多少應該會有些幫助吧！就算沒有幫助，對跟不同領域的人聊天應該也會有幫助（笑）。</p>
-<p>我一直以為經營部落格就是好好寫文章，可是現在因為競爭非常激烈（畢竟入手低嘛），經營部落格已經不單單是認真寫文章而已了。認真寫文章、有好的文章品質、圖片品質，這都是部落客的基本條件而已，更重要的是部落格要怎麼「導入流量」。導入流量有幾個方法：社群平台、文章平台、google 搜尋（也就是大家常常在說的 SEO ）。</p>
-            
-            <a class="article-more-link" href="/2020/03/03/how-to-get-traffic/">
-                Read More...
-            </a>
-            
-            
-        </div>
-        <footer class="article-footer">
-            <a data-url="http://yoursite.com/2020/03/03/how-to-get-traffic/" data-id="ck7bi61vc0003dww00p4v3hny" class="article-share-link">
-                Share
-            </a>
-            
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%83%A8%E8%90%BD%E6%A0%BC%E7%B6%93%E7%87%9F/" rel="tag">部落格經營</a></li></ul>
-
-        </footer>
-
-    </div>
-
-    
-
-    
-
-    <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-        data-width="90%" data-numposts="5"></div> -->
-</article>
-        
-          <article id="post-投入前端第一年" class="article article-type-post" itemscope
-    itemprop="blogPost" data-scroll-reveal>
-
-    <div class="article-inner">
-        
-        <header class="article-header">
-            
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2020/02/25/%E6%8A%95%E5%85%A5%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%B9%B4/">投入前端第一年</a>
-    </h2>
-  
-  
-
-
-
-
-        </header>
-        
-
-        
-        <div class="article-meta">
-            <a href="/2020/02/25/%E6%8A%95%E5%85%A5%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%B9%B4/" class="article-date">
-  <time datetime="2020-02-25T06:58:43.000Z" itemprop="datePublished">2020-02-25</time>
-</a>
-            
-        </div>
-        
-
-        
-
-        <div class="article-entry" itemprop="articleBody">
-            
-
-
-            
-
-            
-            <p>我是在去年正式辭職，全職投入前端領域的。當時我想，應該是半年就可以開始找工作了吧。事後證明我太樂觀了。中間遇到許多困難，我當初完全沒有預想到。一拖就是一年，好險自己還是有些存款，讓自己的生活不至於太窘迫。</p>
-<p>事後回想起來，我覺得除了一方面是我自己或許太完美主義了，另一方面也是我自己腦袋在某些奇怪的點一直轉不過來，導致自己在學習的過程中產生許多不必要的挫折感。兩邊拉扯之下，讓自己前進的速度慢上許多。不過，這個過程中，我也學到很多。看似繞了點遠路，但收穫也還算是扎實。</p>
-            
-            <a class="article-more-link" href="/2020/02/25/%E6%8A%95%E5%85%A5%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%B9%B4/">
-                Read More...
-            </a>
-            
-            
-        </div>
-        <footer class="article-footer">
-            <a data-url="http://yoursite.com/2020/02/25/%E6%8A%95%E5%85%A5%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%B9%B4/" data-id="ck7bi61vh0004dww04time72c" class="article-share-link">
-                Share
-            </a>
-            
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%81%B7%E6%B6%AF%E7%B4%80%E9%8C%84/" rel="tag">職涯紀錄</a></li></ul>
-
-        </footer>
-
-    </div>
-
-    
-
-    
-
-    <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-        data-width="90%" data-numposts="5"></div> -->
-</article>
-        
-    </article>
-    
-  
-    
-  </section>
-</div>
-
-  <footer class="footer">
-  <div class="outer">
-    <div class="float-right">
-      <ul class="list-inline">
-  
-    <li><i class="fe fe-bar-chart"></i> <span id="busuanzi_value_site_pv"></span></li>
-  
-    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-</ul>
-    </div>
-    <ul class="list-inline">
-      <li>&copy; 2020 Myia&#39;s blog</li>
-      <li>by  <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
-      <li>Hero-img  <a href="https://unsplash.com/@alexasoh" target="_blank" rel="noopener">Alexa Soh</a></li>
-
-    </ul>
-  </div>
-</footer>
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-    <div class="logo">
-      <a href="/"><img src="/images/hexo.svg" alt="Myia&#39;s blog"></a>
-    </div>
-  
-  <ul class="nav nav-main">
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="Search">
-        <i class="fe fe-search"></i>
-        Search
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Myia's blog</span>
+        <span class="logo-line-after"><i></i></span>
       </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
+    </div>
+        <p class="site-subtitle">前端技術紀錄、everything I know</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
-    </li>
-    <li class="nav-item">
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>Über</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Kategorien</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/" class="post-title-link" itemprop="url">vue cli中使用bootstrap的JS元件</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 13:12:16" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
+          <p>一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就可以了。</p>
+<p>安裝了 jqeury，也把 bootstrap 匯入 Vue 專案中後，我們就可以把 modal 這個元件寫到 Vue 元件的 template 部分裡，不需要額外寫其他程式碼，這個 modal 就會運行了。這部分和我們一般在寫 bootstrap 時一樣。</p>
+<h2 id="兩種使用-bootstrap-的-JS-元件方法，以-modal-為例"><a href="#兩種使用-bootstrap-的-JS-元件方法，以-modal-為例" class="headerlink" title="兩種使用 bootstrap 的 JS 元件方法，以 modal 為例"></a>兩種使用 bootstrap 的 JS 元件方法，以 modal 為例</h2><p>在 bootstrap 的 modal 使用說明中，該篇文章的結語部分，提到「有兩種使用 modal 的方法」：</p>
+<ol>
+<li>透過 data-* 屬性 ( 把 bootstrap 提供的 HTML 貼到自己的 HTML 檔裡 )</li>
+<li>透過 JavaScript ( 部分自己寫 JS 程式碼、部分使用 bootstrap 寫好的程式碼 )</li>
+</ol>
+<h2 id="透過-data-屬性"><a href="#透過-data-屬性" class="headerlink" title="透過 data-* 屬性"></a>透過 data-* 屬性</h2><p>透過 data-* 屬性是一般使用 modal 的方法。透過 bootstrap 提供的 HTML 程式碼在網頁中使用 modal 這個元件 。這段程式碼裡，包含了 data-toggle 和 data-target 兩個屬性，我們便是透過這兩個屬性讓 bootstrap 的 JS 程式碼去選取 我們網頁的 DOM 元素。bootstrap 透過 data-toggle 選取相對應的事件觸發元素（例如，button），再透過 data-target 選取 modal 本身（那個跳出來的 div）。</p>
+<p>我們可以想像在 bootstrap 的 JS 程式碼中，可能是這樣：</p>
+<p>/* 這不是 bootstrap 的程式碼，是我猜測 bootstrap 可能會這樣寫：*/</p>
+<pre><code>const button = // 用 jquery 的方式選取有 data-toggle 的 DOM 元素 //
+const target = // data-target的值 //
+const modal = // 用 target 選取 DOM 元素，也就是 modal 本身 //
+
+button.addEventListener(&apos;click&apos;, toggleDOM(modal));
+
+function toggleDOM(modal){
+        // button被觸發後，modal的行為
+}</code></pre><h2 id="自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。"><a href="#自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。" class="headerlink" title="自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。"></a>自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。</h2><h3 id="jquery-的寫法、一些基本概念"><a href="#jquery-的寫法、一些基本概念" class="headerlink" title="jquery 的寫法、一些基本概念"></a>jquery 的寫法、一些基本概念</h3><p>由於 bootstrap 是使用 jquery 去撰寫 JS 元件的程式碼，所以在這部分我們一樣也是使用 jquery 的方法選取 DOM 元素。在一組 modal 中，我們需要兩個 DOM 元素：</p>
+<ol>
+<li>觸發的按鈕</li>
+<li>modal 本身</li>
+</ol>
+<p>因此，我們只要透過 jquery 的方式，選取這兩個 DOM 元素即可。</p>
+<pre><code>$(&apos;button&apos;).click(function(){
+            $(&apos;#myModal&apos;).modal(options); //這行是 bootstrap 提供的程式碼
+})</code></pre><p>在這邊我們會發現，不管是透過第一種 data的方法，還是 $(‘’) 這個方法，最主要的差別只是用不同的方式選取 DOM 元素。因為，我們已經用 $(‘’) 代替了 data-toggle 和 data-target 。所以，當我們使用第二種 $(‘’) 的方法時，我們就必須把 HTML 的程式碼中，data-* 的屬性拿掉。</p>
+<h3 id="在-Vue-cli-的元件中…"><a href="#在-Vue-cli-的元件中…" class="headerlink" title="在 Vue cli 的元件中…"></a>在 Vue cli 的元件中…</h3><p>概念上和 上述 jquery 的寫法差不多，就是用 Vue.js 的語法寫按鈕事件，只是在 methods 的部分，我們使用 jqeury 的方式選取 DOM，event handler 用的是 bootstrap 寫好的方法： </p>
+<pre><code>&lt;button @click=&quot;callModal&quot;&gt;
+
+//... 中間很多程式碼 ...//
+
+methods: {
+    callModal() {
+        $(&apos;#myModal&apos;).modal(&apos;options&apos;);
+        }
+}</code></pre><p>在這邊，如果使用了 ESlint 的話，可能會跳出錯誤訊息。這是因為，在這個元件中，我們並沒有定義 $ 是什麼。如果要解決這個方法，我們就需要把 $ 這個變數匯入元件當中：</p>
+<pre><code>import $ form &apos;jquery&apos;</code></pre><h2 id="為什麼要用第二種方法？"><a href="#為什麼要用第二種方法？" class="headerlink" title="為什麼要用第二種方法？"></a>為什麼要用第二種方法？</h2><p>透過第二種方法，我們就可以進一步使用其他方式決定 modal 跳出的時間，優化使用者體驗。例如，在第二種方法中，我們可以用 ajax 的方式，讓呼叫 modal 的按鈕在被觸發後，稍作等待，等待 ajax 取得資料後，再讓相對應的 modal 跳出。這樣做的用意，是為了確保 modal 有資料後，才會呈現給使用者。</p>
+<hr>
+<p>**關於在Vue cli 中使用 jquery 這篇文章有更詳細的說明：</p>
+<p><a href="https://pjchender.github.io/2017/09/26/vue-%E5%9C%A8-vue-%E4%B8%AD%E4%BD%BF%E7%94%A8%EF%BC%88es6-import%EF%BC%89-bootstrap4-%E5%92%8C-jquery/" target="_blank" rel="noopener">https://pjchender.github.io/2017/09/26/vue-在-vue-中使用（es6-import）-bootstrap4-和-jquery/</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/" class="post-title-link" itemprop="url">對於 Google BERT 演算法的感想</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+
+              <time title="Erstellt: 2020-03-03 14:17:51" itemprop="dateCreated datePublished" datetime="2020-03-03T14:17:51+08:00">2020-03-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-03-07 13:06:07" itemprop="dateModified" datetime="2020-03-07T13:06:07+08:00">2020-03-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="2020/03/03/how-to-get-traffic">前一篇文章</a>提到透過不同方式而來的讀者，大致上可能會有什麼樣的特性。這篇，想來分享一下 Google 最新的演算法。這一個月來，看到好幾篇文章都有寫到部落格流量突然掉下來。明明寫文章的風格和頻率都和以前一樣，怎麼忽然流量變得很低。其中有個因素是 Google 更改了演算法的規則。(這部分 Facebook、Instagram 的小編們應該也有相同的困擾，因為這兩家社群平台也在更動他們的演算法…)。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/how-to-get-traffic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/03/how-to-get-traffic/" class="post-title-link" itemprop="url">部落格導入流量的一些想法記錄：平台和搜尋的不同</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              <time title="Erstellt: 2020-03-03 14:16:35 / Geändert am: 14:32:18" itemprop="dateCreated datePublished" datetime="2020-03-03T14:16:35+08:00">2020-03-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近在研究部落格經營。一方面是我自己也想寫，另一面正也和我準備投入的前端領域息息相關。多少了解一些，對工作多少應該會有些幫助吧！就算沒有幫助，對跟不同領域的人聊天應該也會有幫助（笑）。</p>
+<p>我一直以為經營部落格就是好好寫文章，可是現在因為競爭非常激烈（畢竟入手低嘛），經營部落格已經不單單是認真寫文章而已了。認真寫文章、有好的文章品質、圖片品質，這都是部落客的基本條件而已，更重要的是部落格要怎麼「導入流量」。導入流量有幾個方法：社群平台、文章平台、google 搜尋（也就是大家常常在說的 SEO ）。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/03/how-to-get-traffic/#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/%E6%8A%95%E5%85%A5%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%B9%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/25/%E6%8A%95%E5%85%A5%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%B9%B4/" class="post-title-link" itemprop="url">投入前端第一年</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              <time title="Erstellt: 2020-02-25 14:58:43 / Geändert am: 21:48:02" itemprop="dateCreated datePublished" datetime="2020-02-25T14:58:43+08:00">2020-02-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>我是在去年正式辭職，全職投入前端領域的。當時我想，應該是半年就可以開始找工作了吧。事後證明我太樂觀了。中間遇到許多困難，我當初完全沒有預想到。一拖就是一年，好險自己還是有些存款，讓自己的生活不至於太窘迫。</p>
+<p>事後回想起來，我覺得除了一方面是我自己或許太完美主義了，另一方面也是我自己腦袋在某些奇怪的點一直轉不過來，導致自己在學習的過程中產生許多不必要的挫折感。兩邊拉扯之下，讓自己前進的速度慢上許多。不過，這個過程中，我也學到很多。看似繞了點遠路，但收穫也還算是扎實。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/25/%E6%8A%95%E5%85%A5%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%B9%B4/#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Myia</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">schlagwörter</span>
+      </div>
+  </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/myiaj" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;myiaj" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myia</span>
 </div>
-</aside>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Design – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
+  </div>
 
-<script src="/js/jquery-2.0.3.min.js"></script>
-
-
-<script src="/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="/js/lazyload.min.js"></script>
-
-
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
-
-
-
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+        
 
 
 
 
 
 
-<script src="/js/ocean.js"></script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
 </body>
 </html>
