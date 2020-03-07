@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就">
+  <meta name="description" content="投入前端學習的這段時間，我發現我時間管理實在很差。不過，我後來意識到這並不是時間管理的問題，是我完全無法投入學習的過程，很容易在一個小章節就馬上分心。這並不是我原本的狀態。在上一份工作中，我可以全心投入工作過程，讓自己可以在十分鐘甚至是五分鐘之內結束一份小任務，這不是因為我時間管理特別好，是因為我把注意力全心全意地投入在工作的過程中。我很喜歡那種感覺。可是，在離職之後，儘管一開始我還是可以保有原本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue cli中使用bootstrap的JS元件">
-<meta property="og:url" content="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/index.html">
+<meta property="og:title" content="如何加強自己學習的動力">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/index.html">
 <meta property="og:site_name" content="Myia&#39;s blog">
-<meta property="og:description" content="一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就">
+<meta property="og:description" content="投入前端學習的這段時間，我發現我時間管理實在很差。不過，我後來意識到這並不是時間管理的問題，是我完全無法投入學習的過程，很容易在一個小章節就馬上分心。這並不是我原本的狀態。在上一份工作中，我可以全心投入工作過程，讓自己可以在十分鐘甚至是五分鐘之內結束一份小任務，這不是因為我時間管理特別好，是因為我把注意力全心全意地投入在工作的過程中。我很喜歡那種感覺。可是，在離職之後，儘管一開始我還是可以保有原本">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-03-07T05:07:22.000Z">
-<meta property="article:modified_time" content="2020-03-07T05:33:17.474Z">
+<meta property="article:published_time" content="2020-03-07T08:09:43.000Z">
+<meta property="article:modified_time" content="2020-03-07T08:10:54.415Z">
 <meta property="article:author" content="Myia">
+<meta property="article:tag" content="學習">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/">
+<link rel="canonical" href="http://yoursite.com/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/">
 
 
 <script id="page-configurations">
@@ -44,7 +45,7 @@
   };
 </script>
 
-  <title>vue cli中使用bootstrap的JS元件 | Myia's blog</title>
+  <title>如何加強自己學習的動力 | Myia's blog</title>
   
 
 
@@ -164,7 +165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -177,7 +178,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vue cli中使用bootstrap的JS元件
+          如何加強自己學習的動力
         </h1>
 
         <div class="post-meta">
@@ -188,7 +189,7 @@
               <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 13:33:17" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+              <time title="Erstellt: 2020-03-07 16:09:43 / Geändert am: 16:10:54" itemprop="dateCreated datePublished" datetime="2020-03-07T16:09:43+08:00">2020-03-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -196,7 +197,7 @@
               </span>
               <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端技術筆記</span></a>
+                  <a href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/" itemprop="url" rel="index"><span itemprop="name">生活紀錄</span></a>
                 </span>
             </span>
 
@@ -211,49 +212,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就可以了。</p>
-<p>安裝了 jqeury，也把 bootstrap 匯入 Vue 專案中後，我們就可以把 modal 這個元件寫到 Vue 元件的 template 部分裡，不需要額外寫其他程式碼，這個 modal 就會運行了。這部分和我們一般在寫 bootstrap 時一樣。</p>
-<a id="more"></a>
-
-<h2 id="兩種使用-bootstrap-的-JS-元件方法，以-modal-為例"><a href="#兩種使用-bootstrap-的-JS-元件方法，以-modal-為例" class="headerlink" title="兩種使用 bootstrap 的 JS 元件方法，以 modal 為例"></a>兩種使用 bootstrap 的 JS 元件方法，以 modal 為例</h2><p>在 bootstrap 的 modal 使用說明中，該篇文章的結語部分，提到「有兩種使用 modal 的方法」：</p>
-<ol>
-<li>透過 data-* 屬性 ( 把 bootstrap 提供的 HTML 貼到自己的 HTML 檔裡 )</li>
-<li>透過 JavaScript ( 部分自己寫 JS 程式碼、部分使用 bootstrap 寫好的程式碼 )</li>
-</ol>
-<h2 id="透過-data-屬性"><a href="#透過-data-屬性" class="headerlink" title="透過 data-* 屬性"></a>透過 data-* 屬性</h2><p>透過 data-* 屬性是一般使用 modal 的方法。透過 bootstrap 提供的 HTML 程式碼在網頁中使用 modal 這個元件 。這段程式碼裡，包含了 data-toggle 和 data-target 兩個屬性，我們便是透過這兩個屬性讓 bootstrap 的 JS 程式碼去選取 我們網頁的 DOM 元素。bootstrap 透過 data-toggle 選取相對應的事件觸發元素（例如，button），再透過 data-target 選取 modal 本身（那個跳出來的 div）。</p>
-<p>我們可以想像在 bootstrap 的 JS 程式碼中，可能是這樣：</p>
-<p>/* 這不是 bootstrap 的程式碼，是我猜測 bootstrap 可能會這樣寫：*/</p>
-<pre><code>const button = // 用 jquery 的方式選取有 data-toggle 的 DOM 元素 //
-const target = // data-target的值 //
-const modal = // 用 target 選取 DOM 元素，也就是 modal 本身 //
-
-button.addEventListener(&apos;click&apos;, toggleDOM(modal));
-
-function toggleDOM(modal){
-        // button被觸發後，modal的行為
-}</code></pre><h2 id="自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。"><a href="#自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。" class="headerlink" title="自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。"></a>自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。</h2><h3 id="jquery-的寫法、一些基本概念"><a href="#jquery-的寫法、一些基本概念" class="headerlink" title="jquery 的寫法、一些基本概念"></a>jquery 的寫法、一些基本概念</h3><p>由於 bootstrap 是使用 jquery 去撰寫 JS 元件的程式碼，所以在這部分我們一樣也是使用 jquery 的方法選取 DOM 元素。在一組 modal 中，我們需要兩個 DOM 元素：</p>
-<ol>
-<li>觸發的按鈕</li>
-<li>modal 本身</li>
-</ol>
-<p>因此，我們只要透過 jquery 的方式，選取這兩個 DOM 元素即可。</p>
-<pre><code>$(&apos;button&apos;).click(function(){
-            $(&apos;#myModal&apos;).modal(options); //這行是 bootstrap 提供的程式碼
-})</code></pre><p>在這邊我們會發現，不管是透過第一種 data的方法，還是 $(‘’) 這個方法，最主要的差別只是用不同的方式選取 DOM 元素。因為，我們已經用 $(‘’) 代替了 data-toggle 和 data-target 。所以，當我們使用第二種 $(‘’) 的方法時，我們就必須把 HTML 的程式碼中，data-* 的屬性拿掉。</p>
-<h3 id="在-Vue-cli-的元件中…"><a href="#在-Vue-cli-的元件中…" class="headerlink" title="在 Vue cli 的元件中…"></a>在 Vue cli 的元件中…</h3><p>概念上和 上述 jquery 的寫法差不多，就是用 Vue.js 的語法寫按鈕事件，只是在 methods 的部分，我們使用 jqeury 的方式選取 DOM，event handler 用的是 bootstrap 寫好的方法： </p>
-<pre><code>&lt;button @click=&quot;callModal&quot;&gt;
-
-//... 中間很多程式碼 ...//
-
-methods: {
-    callModal() {
-        $(&apos;#myModal&apos;).modal(&apos;options&apos;);
-        }
-}</code></pre><p>在這邊，如果使用了 ESlint 的話，可能會跳出錯誤訊息。這是因為，在這個元件中，我們並沒有定義 $ 是什麼。如果要解決這個方法，我們就需要把 $ 這個變數匯入元件當中：</p>
-<pre><code>import $ form &apos;jquery&apos;</code></pre><h2 id="為什麼要用第二種方法？"><a href="#為什麼要用第二種方法？" class="headerlink" title="為什麼要用第二種方法？"></a>為什麼要用第二種方法？</h2><p>透過第二種方法，我們就可以進一步使用其他方式決定 modal 跳出的時間，優化使用者體驗。例如，在第二種方法中，我們可以用 ajax 的方式，讓呼叫 modal 的按鈕在被觸發後，稍作等待，等待 ajax 取得資料後，再讓相對應的 modal 跳出。這樣做的用意，是為了確保 modal 有資料後，才會呈現給使用者。</p>
-<hr>
-<p>**關於在Vue cli 中使用 jquery 這篇文章有更詳細的說明：</p>
-<p><a href="https://pjchender.github.io/2017/09/26/vue-%E5%9C%A8-vue-%E4%B8%AD%E4%BD%BF%E7%94%A8%EF%BC%88es6-import%EF%BC%89-bootstrap4-%E5%92%8C-jquery/" target="_blank" rel="noopener">https://pjchender.github.io/2017/09/26/vue-在-vue-中使用（es6-import）-bootstrap4-和-jquery/</a></p>
+        <p>投入前端學習的這段時間，我發現我時間管理實在很差。不過，我後來意識到這並不是時間管理的問題，是我完全無法投入學習的過程，很容易在一個小章節就馬上分心。這並不是我原本的狀態。在上一份工作中，我可以全心投入工作過程，讓自己可以在十分鐘甚至是五分鐘之內結束一份小任務，這不是因為我時間管理特別好，是因為我把注意力全心全意地投入在工作的過程中。我很喜歡那種感覺。可是，在離職之後，儘管一開始我還是可以保有原本的投入狀態，當時學習的品質也很好。可是，大約過了半年之後，我發現我忽然沒辦法進入那樣的狀態了！</p>
+<p>經過一段時間摸索，我才意識到原來我是找不到更明確的方向。儘管我有成為前端工程師，這樣的目標。但是，我發現這樣的目標對我來說，其實非常模糊，難以想像、捉摸。成為前端工程師，是怎樣的前端工程師呢？只是完成這些課程的作業、多做幾個作品嗎？像這樣的問題一直在我腦海裡出現。我總覺得這樣的目標對我來說還是太模糊。</p>
+<p>探索一段時間後，我發現自己需要找出一個有興趣的領域，往那個部分去鑽研，會是個比較有效率的做法。對我而言，有了自己關心的問題，才有辦法踏實地在這個領域前進。去年，本來我對前端領域變得沒什麼興致了。可是，最近因為對部落格經營、wordpress 很有興趣，連帶著連前端這塊，也忽然又有動力往前了。稍微看了別人寫的部落格，慢慢地我才意識到原來我不是因為沒興趣，是因為我想要感受到一些實際工作的真實感。我想要感受看看，實際架站時，會遇到什麼問題。在研究部落格經營時，我發現網路上看見的部落客提出的問題，就是我未來在工作中可能會遇到的問題，那瞬間的真實感，讓我意識到自己可以先往哪些地方定錨，再透過這些錨點往更寬廣的地方鑽研。</p>
+<p>這部分有點像是像在念書時，我們會很自然地想要在這個領域裡面，找出自己有興趣的部分，往那個方向鑽研。以我自己而言，我不會因為我對外國文學、小說有興趣，我就狂念「所有」的西方文學作品。我需要的是對這些西方文學有個基本的認識；如果，想要在這個領域更進一步地發展，就必須決定一個方向。這樣學習上才會更有效率。又或者是在經營部落格、YouTube時，會寫文章、會拍影片只是一個基本要求，可是要在這個領域裡更突出，就得找出自己的風格。這部分就跟寫出幾篇文章、拍出幾個影片一點關係也沒有了。因為在其他領域做得太自然了，導致在投入前端這個對我而言相對陌生的領域時，我完全沒有意識到我其實是需要找一個自己最有興趣的方向。</p>
+<p>這幾天想通這件事後，雖然進度一樣不快，但心裡卻時踏實很多。在這樣的狀態下，我發現我也比較容易看見自己可以做些什麼，而不是胡亂地抓住各種外界給的目標，讓自己迷失在各種學習裡。</p>
 
     </div>
 
@@ -262,6 +225,9 @@ methods: {
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%B8%E7%BF%92/" rel="tag"># 學習</a>
+          </div>
 
         
 
@@ -269,13 +235,10 @@ methods: {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/" rel="prev" title="對於 Google BERT 演算法的感想">
-      <i class="fa fa-chevron-left"></i> 對於 Google BERT 演算法的感想
+    <a href="/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/" rel="prev" title="vue cli中使用bootstrap的JS元件">
+      <i class="fa fa-chevron-left"></i> vue cli中使用bootstrap的JS元件
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/" rel="next" title="如何加強自己學習的動力">
-      如何加強自己學習的動力 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -335,7 +298,6 @@ methods: {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#兩種使用-bootstrap-的-JS-元件方法，以-modal-為例"><span class="nav-number">1.</span> <span class="nav-text">兩種使用 bootstrap 的 JS 元件方法，以 modal 為例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透過-data-屬性"><span class="nav-number">2.</span> <span class="nav-text">透過 data-* 屬性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。"><span class="nav-number">3.</span> <span class="nav-text">自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jquery-的寫法、一些基本概念"><span class="nav-number">3.1.</span> <span class="nav-text">jquery 的寫法、一些基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Vue-cli-的元件中…"><span class="nav-number">3.2.</span> <span class="nav-text">在 Vue cli 的元件中…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼要用第二種方法？"><span class="nav-number">4.</span> <span class="nav-text">為什麼要用第二種方法？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
