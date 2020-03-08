@@ -168,7 +168,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/09/Bootstrap-5/" class="post-title-link" itemprop="url">Bootstrap 5?</a>
+            <a href="/2020/03/09/Bootstrap-5/" class="post-title-link" itemprop="url">Bootstrap 5 的釋出時間、以及會有哪些更新</a>
         </h1>
 
         <div class="post-meta">
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Erstellt: 2020-03-09 00:10:48 / Geändert am: 00:18:51" itemprop="dateCreated datePublished" datetime="2020-03-09T00:10:48+08:00">2020-03-09</time>
+              <time title="Erstellt: 2020-03-09 00:10:48 / Geändert am: 00:28:00" itemprop="dateCreated datePublished" datetime="2020-03-09T00:10:48+08:00">2020-03-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -187,7 +187,7 @@
               </span>
               <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E7%AB%A0%E7%BF%BB%E8%AD%AF/" itemprop="url" rel="index"><span itemprop="name">技術文章翻譯</span></a>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E9%97%9C%E7%BF%BB%E8%AD%AF/" itemprop="url" rel="index"><span itemprop="name">前端相關翻譯</span></a>
                 </span>
             </span>
 
@@ -202,101 +202,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 less 的檔案改用 sass 撰寫。此外，這個版本歷經了兩年多的時間，在 2018年 1 月18 號，終於完成其穩定版本。</p>
+          <p>這篇文章翻譯自<a href="https://themesberg.com/blog/design/bootstrap-5-release-date-and-whats-new" target="_blank" rel="noopener">這篇文章</a>。從文章看起來似乎是使用者針對 Bootstrap 未來更新的推測，所以最後還是得以 Bootstrap 的官方文件為準。希望不會有奇怪的英文化中文，也請多多指教。</p>
+<hr>
+<p>Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 less 的檔案改用 sass 撰寫。此外，這個版本歷經了兩年多的時間，在 2018年 1 月18 號，終於完成其穩定版本。</p>
 <p>總而言之，我們來看看 bootstrap 5 的釋出時間和它更新了些什麼吧！</p>
-<h2 id="Bootstrap-5-的釋出時間4"><a href="#Bootstrap-5-的釋出時間4" class="headerlink" title="Bootstrap 5 的釋出時間4"></a><strong>Bootstrap 5 的釋出時間</strong>4</h2><p>Bootstrap 更新進度看起來似乎非常順利。在 Bootstrap 的官方Github 專案對紀錄裡，有 686 個被上傳的任務，其中大約有至少 35 個任務已經進入審閱程序，或是進入審閱排程。考量到他們已經開始進行 alpha-2 和 alpha-3 的作業，我們可以期待Bootstrap 5 會在今年春末釋出。</p>
-<h2 id="有什麼新東西？"><a href="#有什麼新東西？" class="headerlink" title="有什麼新東西？="></a><strong>有什麼新東西？</strong>=</h2><p>主要的更新包括，<strong>把 jQuery 這個套件移除</strong>、把 custom icon 這個以 SVG 製成的授權 <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener">icon 圖庫</a>加回來（這個圖庫bootstrap 其實已經在去年釋出了）、局部 CSS 和 JavaScript 簡化、修正和改進，並且撤除對 IE 10 的支援。</p>
-<p>這份清單包含了，Bootstrap 5 預期會有的更新：</p>
-<ul>
-<li>移除 Jquery</li>
-<li>撤掉對 IE 10 的支援</li>
-<li>客製化的 icon 函式庫</li>
-<li>從 Jekyll 轉移至 Hego</li>
-<li>重大 JavaScript 更新</li>
-<li>小部分的 CSS 類別給更新及修正</li>
-</ul>
-<h3 id="移除-jQuery-😱"><a href="#移除-jQuery-😱" class="headerlink" title="移除 jQuery 😱"></a>移除 jQuery 😱</h3><p>這點其實不需要感到太驚訝。因為全世界越來越多開發者開始使用像是 React.js、Vue.js、Angular.js 這樣的框架，jQuery 早已逐漸失去它本來的地位。 此外，很多 jQuery 的功能，現在用純 JavaScript 就能完成。</p>
-<p>jQuery 已經用很久了，我認為這是個移除 jQuery 的最佳時機。把這個套件移除掉，可以讓整個專案輕量非常多。</p>
-<h2 id="撤除對-IE-10-的支援"><a href="#撤除對-IE-10-的支援" class="headerlink" title="撤除對 IE 10 的支援"></a><strong>撤除對 IE 10 的支援</strong></h2><p>IE 10 的用戶，在全世界的瀏覽器使用者中，不到 1 %。考量到從 2016年開始，微軟已經不再對 IE 10 以前（包含 10）的版本做支援，這是個可以理解的改變。</p>
-<h3 id="客製化-SVG-icon-圖庫-🚀"><a href="#客製化-SVG-icon-圖庫-🚀" class="headerlink" title="客製化 SVG  icon 圖庫 🚀"></a><strong>客製化 SVG  icon 圖庫 🚀</strong></h3><p>個人對於 Bootstrap 4 沒有加入 icon 圖庫，感到有些失望。我們通常會在專案裡的，使用 font awesome 或是其他自製 icon，但很快地，我們可能可以改變作法了。</p>
-<p>在第 5 版，會有全新的授權 SVG icon圖庫。這些 icon 是由 Mark Otto 繪製。更棒的是，這個圖庫其實已經在去年的 <a href="https://blog.getbootstrap.com/2019/12/14/bootstrap-icons-alpha2/" target="_blank" rel="noopener">12 月釋出</a> ，你現在就可以在專案裡使用！</p>
-<h3 id="從-Jekyll-轉移到-Hugo-🔝"><a href="#從-Jekyll-轉移到-Hugo-🔝" class="headerlink" title="從 Jekyll 轉移到 Hugo 🔝"></a><strong>從 Jekyll 轉移到 Hugo 🔝</strong></h3><p>身為熱門的靜態網頁產生器，<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> 已經陪我們走過很長一段時間。然而，在近幾年，<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 已經成了公認的，最快也最推薦的產生器。我們認為這個改變，和第 4 版時，Bootstrap 從 Less 轉移到 Sass，非常相似。</p>
-<h3 id="Javascript-amp-CSS"><a href="#Javascript-amp-CSS" class="headerlink" title="Javascript &amp; CSS"></a><strong>Javascript &amp; CSS</strong></h3><p>因為 jQuery 將會從專案中移除，我們可以預期核心的 JavaScript 檔案會有重大更新，也預計會有相關的 event listener、事件選項的新使用文件。至於 CSS，雖然新版本不會有更新，但我們認為可能會有一些優化、類別更新、和一般的修正。</p>
-<p>總之，Bootstrap 5 應當變得更快、更簡單、也更好看。不過，別期待元件會有重大的更新，對於它們協助我們為使用者開發美觀、且載入時間短的使用者介面，節省許多時間，我們反倒需要心懷感謝。</p>
-<p>如果你在專案中使用 bootstrap，還請考慮我們的<a href="https://themesberg.com/products/bootstrap-themes" target="_blank" rel="noopener">免費 / 付費 Bootstrap 模板</a> 🙏。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Myia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Myia's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/" class="post-title-link" itemprop="url">如何加強自己學習的動力？</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              <time title="Erstellt: 2020-03-07 16:09:43 / Geändert am: 17:12:09" itemprop="dateCreated datePublished" datetime="2020-03-07T16:09:43+08:00">2020-03-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/" itemprop="url" rel="index"><span itemprop="name">生活紀錄</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>前陣子撞牆期有點久，過了快半年我才釐清自己的狀態其實是因為找不到確切的方向。突破了這點後，發現自己又有前進的動力了！我想把這段時間的經驗寫下來，希望能幫助到有類似困惑的人。</p>
-<p>投入前端學習的這段時間，我發現我時間管理實在很差。不過，我後來意識到這並不是時間管理的問題，是我完全無法投入學習的過程，很容易在一個小章節就馬上分心。這並不是我原本的狀態。在上一份工作中，我可以全心投入工作過程，讓自己可以在十分鐘甚至是五分鐘之內結束一份小任務，這不是因為我時間管理特別好，是因為我把注意力全心全意地投入在工作的過程中。我很喜歡那種感覺。可是，在離職之後，儘管一開始我還是可以保有原本的投入狀態，當時學習的品質也很好。可是，大約過了半年之後，我發現我忽然沒辦法進入那樣的狀態了！</p>
-<p>經過一段時間摸索，我才意識到原來我是找不到更明確的方向。儘管我有成為前端工程師，這樣的目標。但是，我發現這樣的目標對我來說，其實非常模糊，難以想像、捉摸。成為前端工程師，是怎樣的前端工程師呢？只是完成這些課程的作業、多做幾個作品嗎？像這樣的問題一直在我腦海裡出現。我總覺得這樣的目標對我來說還是太模糊。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/#more" rel="contents">
+              <a class="btn" href="/2020/03/09/Bootstrap-5/#more" rel="contents">
                 Weiterlesen &raquo;
               </a>
             </div>
@@ -607,13 +519,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
