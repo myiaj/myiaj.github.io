@@ -20,27 +20,32 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Myia&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 less 的檔案改用 sass 撰寫。此外，這個版本歷經了兩年多的時間，在 2018年 1 月18 號，終於完成其穩定版本。 總而言之，我們來看看 bootstrap 5 的釋出時間和它更新了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap 5?">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/Bootstrap-5/index.html">
 <meta property="og:site_name" content="Myia&#39;s blog">
+<meta property="og:description" content="Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 less 的檔案改用 sass 撰寫。此外，這個版本歷經了兩年多的時間，在 2018年 1 月18 號，終於完成其穩定版本。 總而言之，我們來看看 bootstrap 5 的釋出時間和它更新了">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-03-08T16:10:48.000Z">
+<meta property="article:modified_time" content="2020-03-08T16:18:51.245Z">
 <meta property="article:author" content="Myia">
+<meta property="article:tag" content="Bootstrap">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/03/09/Bootstrap-5/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false
+    isHome : false,
+    isPost : true
   };
 </script>
 
-  <title>Myia's blog</title>
+  <title>Bootstrap 5? | Myia's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159077278-1"></script>
     <script>
@@ -150,10 +155,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/09/Bootstrap-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -167,8 +172,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/09/Bootstrap-5/" class="post-title-link" itemprop="url">Bootstrap 5?</a>
+          Bootstrap 5?
         </h1>
 
         <div class="post-meta">
@@ -202,7 +206,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 less 的檔案改用 sass 撰寫。此外，這個版本歷經了兩年多的時間，在 2018年 1 月18 號，終於完成其穩定版本。</p>
+        <p>Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 less 的檔案改用 sass 撰寫。此外，這個版本歷經了兩年多的時間，在 2018年 1 月18 號，終於完成其穩定版本。</p>
 <p>總而言之，我們來看看 bootstrap 5 的釋出時間和它更新了些什麼吧！</p>
 <h2 id="Bootstrap-5-的釋出時間4"><a href="#Bootstrap-5-的釋出時間4" class="headerlink" title="Bootstrap 5 的釋出時間4"></a><strong>Bootstrap 5 的釋出時間</strong>4</h2><p>Bootstrap 更新進度看起來似乎非常順利。在 Bootstrap 的官方Github 專案對紀錄裡，有 686 個被上傳的任務，其中大約有至少 35 個任務已經進入審閱程序，或是進入審閱排程。考量到他們已經開始進行 alpha-2 和 alpha-3 的作業，我們可以期待Bootstrap 5 會在今年春末釋出。</p>
 <h2 id="有什麼新東西？"><a href="#有什麼新東西？" class="headerlink" title="有什麼新東西？="></a><strong>有什麼新東西？</strong>=</h2><p>主要的更新包括，<strong>把 jQuery 這個套件移除</strong>、把 custom icon 這個以 SVG 製成的授權 <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener">icon 圖庫</a>加回來（這個圖庫bootstrap 其實已經在去年釋出了）、局部 CSS 和 JavaScript 簡化、修正和改進，並且撤除對 IE 10 的支援。</p>
@@ -225,325 +229,36 @@
 <p>總之，Bootstrap 5 應當變得更快、更簡單、也更好看。不過，別期待元件會有重大的更新，對於它們協助我們為使用者開發美觀、且載入時間短的使用者介面，節省許多時間，我們反倒需要心懷感謝。</p>
 <p>如果你在專案中使用 bootstrap，還請考慮我們的<a href="https://themesberg.com/products/bootstrap-themes" target="_blank" rel="noopener">免費 / 付費 Bootstrap 模板</a> 🙏。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Bootstrap/" rel="tag"># Bootstrap</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Myia">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Myia's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/" class="post-title-link" itemprop="url">如何加強自己學習的動力？</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              <time title="Erstellt: 2020-03-07 16:09:43 / Geändert am: 17:12:09" itemprop="dateCreated datePublished" datetime="2020-03-07T16:09:43+08:00">2020-03-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E7%B4%80%E9%8C%84/" itemprop="url" rel="index"><span itemprop="name">生活紀錄</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>前陣子撞牆期有點久，過了快半年我才釐清自己的狀態其實是因為找不到確切的方向。突破了這點後，發現自己又有前進的動力了！我想把這段時間的經驗寫下來，希望能幫助到有類似困惑的人。</p>
-<p>投入前端學習的這段時間，我發現我時間管理實在很差。不過，我後來意識到這並不是時間管理的問題，是我完全無法投入學習的過程，很容易在一個小章節就馬上分心。這並不是我原本的狀態。在上一份工作中，我可以全心投入工作過程，讓自己可以在十分鐘甚至是五分鐘之內結束一份小任務，這不是因為我時間管理特別好，是因為我把注意力全心全意地投入在工作的過程中。我很喜歡那種感覺。可是，在離職之後，儘管一開始我還是可以保有原本的投入狀態，當時學習的品質也很好。可是，大約過了半年之後，我發現我忽然沒辦法進入那樣的狀態了！</p>
-<p>經過一段時間摸索，我才意識到原來我是找不到更明確的方向。儘管我有成為前端工程師，這樣的目標。但是，我發現這樣的目標對我來說，其實非常模糊，難以想像、捉摸。成為前端工程師，是怎樣的前端工程師呢？只是完成這些課程的作業、多做幾個作品嗎？像這樣的問題一直在我腦海裡出現。我總覺得這樣的目標對我來說還是太模糊。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/07/%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BC%B7%E8%87%AA%E5%B7%B1%E5%AD%B8%E7%BF%92%E7%9A%84%E5%8B%95%E5%8A%9B/" rel="prev" title="如何加強自己學習的動力？">
+      <i class="fa fa-chevron-left"></i> 如何加強自己學習的動力？
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Myia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Myia's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/" class="post-title-link" itemprop="url">vue cli中使用bootstrap的JS元件</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 17:16:48" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端技術筆記</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就可以了。</p>
-<p>安裝了 jqeury，也把 bootstrap 匯入 Vue 專案中後，我們就可以把 modal 這個元件寫到 Vue 元件的 template 部分裡，不需要額外寫其他程式碼，這個 modal 就會運行了。這部分和我們一般在寫 bootstrap 時一樣。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Myia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Myia's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/" class="post-title-link" itemprop="url">對於 Google BERT 演算法的感想</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-
-              <time title="Erstellt: 2020-03-03 14:17:51" itemprop="dateCreated datePublished" datetime="2020-03-03T14:17:51+08:00">2020-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Bearbeitet am</span>
-                <time title="Geändert am: 2020-03-07 17:17:50" itemprop="dateModified" datetime="2020-03-07T17:17:50+08:00">2020-03-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%83%A8%E8%90%BD%E6%A0%BC/" itemprop="url" rel="index"><span itemprop="name">部落格</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="2020/03/03/how-to-get-traffic">前一篇文章</a>提到透過不同方式而來的讀者，大致上可能會有什麼樣的特性。這篇，想來分享一下 Google 最新的演算法。這一個月來，看到好幾篇文章都有寫到部落格流量突然掉下來。明明寫文章的風格和頻率都和以前一樣，怎麼忽然流量變得很低。其中有個因素是 Google 更改了演算法的規則。(這部分 Facebook、Instagram 的小編們應該也有相同的困擾，因為這兩家社群平台也在更動他們的演算法…)。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/how-to-get-traffic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Myia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Myia's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/how-to-get-traffic/" class="post-title-link" itemprop="url">部落格導入流量的一些想法記錄：平台和搜尋的不同</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              <time title="Erstellt: 2020-03-03 14:16:35 / Geändert am: 14:32:18" itemprop="dateCreated datePublished" datetime="2020-03-03T14:16:35+08:00">2020-03-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近在研究部落格經營。一方面是我自己也想寫，另一面正也和我準備投入的前端領域息息相關。多少了解一些，對工作多少應該會有些幫助吧！就算沒有幫助，對跟不同領域的人聊天應該也會有幫助（笑）。</p>
-<p>我一直以為經營部落格就是好好寫文章，可是現在因為競爭非常激烈（畢竟入手低嘛），經營部落格已經不單單是認真寫文章而已了。認真寫文章、有好的文章品質、圖片品質，這都是部落客的基本條件而已，更重要的是部落格要怎麼「導入流量」。導入流量有幾個方法：社群平台、文章平台、google 搜尋（也就是大家常常在說的 SEO ）。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/03/how-to-get-traffic/#more" rel="contents">
-                Weiterlesen &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -594,6 +309,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap-5-的釋出時間4"><span class="nav-number">1.</span> <span class="nav-text">Bootstrap 5 的釋出時間4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有什麼新東西？"><span class="nav-number">2.</span> <span class="nav-text">有什麼新東西？&#x3D;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移除-jQuery-😱"><span class="nav-number">2.1.</span> <span class="nav-text">移除 jQuery 😱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤除對-IE-10-的支援"><span class="nav-number">3.</span> <span class="nav-text">撤除對 IE 10 的支援</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客製化-SVG-icon-圖庫-🚀"><span class="nav-number">3.1.</span> <span class="nav-text">客製化 SVG  icon 圖庫 🚀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#從-Jekyll-轉移到-Hugo-🔝"><span class="nav-number">3.2.</span> <span class="nav-text">從 Jekyll 轉移到 Hugo 🔝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript-amp-CSS"><span class="nav-number">3.3.</span> <span class="nav-text">Javascript &amp; CSS</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
