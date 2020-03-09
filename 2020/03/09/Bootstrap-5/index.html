@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="這篇文章翻譯自這篇文章。從文章看起來似乎是使用者針對 Bootstrap 未來更新的推測，所以最後還是得以 Bootstrap 的官方文件為準。希望不會有奇怪的英文化中文，也請多多指教。  Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap 5 的釋出時間、以及會有哪些更新">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/Bootstrap-5/index.html">
+<meta property="og:site_name" content="Myia&#39;s blog">
+<meta property="og:description" content="這篇文章翻譯自這篇文章。從文章看起來似乎是使用者針對 Bootstrap 未來更新的推測，所以最後還是得以 Bootstrap 的官方文件為準。希望不會有奇怪的英文化中文，也請多多指教。  Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 l">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-03-08T16:10:48.000Z">
+<meta property="article:modified_time" content="2020-03-08T16:39:02.152Z">
+<meta property="article:author" content="Myia">
+<meta property="article:tag" content="w3HexSchool">
+<meta property="article:tag" content="Bootstrap">
+<meta property="article:tag" content="翻譯">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/09/Bootstrap-5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>Bootstrap 5 的釋出時間、以及會有哪些更新 | Myia's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159077278-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159077278-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Myia's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">前端技術紀錄、everything I know</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>Über</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Kategorien</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>Zeitplan</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/09/Bootstrap-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Bootstrap 5 的釋出時間、以及會有哪些更新
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              <time title="Erstellt: 2020-03-09 00:10:48 / Geändert am: 00:39:02" itemprop="dateCreated datePublished" datetime="2020-03-09T00:10:48+08:00">2020-03-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E9%97%9C%E7%BF%BB%E8%AD%AF/" itemprop="url" rel="index"><span itemprop="name">前端相關翻譯</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>這篇文章翻譯自<a href="https://themesberg.com/blog/design/bootstrap-5-release-date-and-whats-new" target="_blank" rel="noopener">這篇文章</a>。從文章看起來似乎是使用者針對 Bootstrap 未來更新的推測，所以最後還是得以 Bootstrap 的官方文件為準。希望不會有奇怪的英文化中文，也請多多指教。</p>
+<hr>
+<p>Bootstrap 4 alpha 版本在2018年8月19號釋出。這個版本的Bootstrap做了許多改進，像是使用flexbox 、更好的 grid system、card、優化的 Navbar，還有把 less 的檔案改用 sass 撰寫。此外，這個版本歷經了兩年多的時間，在 2018年 1 月18 號，終於完成其穩定版本。</p>
+<p>總而言之，我們來看看 bootstrap 5 的釋出時間和它更新了些什麼吧！</p>
+<a id="more"></a>
+
+<h2 id="Bootstrap-5-的釋出時間"><a href="#Bootstrap-5-的釋出時間" class="headerlink" title="Bootstrap 5 的釋出時間"></a><strong>Bootstrap 5 的釋出時間</strong></h2><p>Bootstrap 更新進度看起來似乎非常順利。在 Bootstrap 的官方Github 專案對紀錄裡，有 686 個被上傳的任務，其中大約有至少 35 個任務已經進入審閱程序，或是進入審閱排程。考量到他們已經開始進行 alpha-2 和 alpha-3 的作業，我們可以期待Bootstrap 5 會在今年春末釋出。</p>
+<h2 id="有什麼新東西？"><a href="#有什麼新東西？" class="headerlink" title="有什麼新東西？"></a><strong>有什麼新東西？</strong></h2><p>主要的更新包括，<strong>把 jQuery 這個套件移除</strong>、把 custom icon 這個以 SVG 製成的授權 <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener">icon 圖庫</a>加回來（這個圖庫bootstrap 其實已經在去年釋出了）、局部 CSS 和 JavaScript 簡化、修正和改進，並且撤除對 IE 10 的支援。</p>
+<p>以下是 Bootstrap 5 預期會有的更新：</p>
+<ul>
+<li>移除 Jquery</li>
+<li>撤掉對 IE 10 的支援</li>
+<li>客製化的 icon 函式庫</li>
+<li>從 Jekyll 轉移至 Hego</li>
+<li>重大 JavaScript 更新</li>
+<li>小部分的 CSS 類別給更新及修正</li>
+</ul>
+<h3 id="移除-jQuery-😱"><a href="#移除-jQuery-😱" class="headerlink" title="移除 jQuery 😱"></a>移除 jQuery 😱</h3><p>這點其實不需要感到太驚訝。因為全世界越來越多開發者開始使用像是 React.js、Vue.js、Angular.js 這樣的框架，jQuery 早已逐漸失去它本來的地位。 此外，很多 jQuery 的功能，現在用純 JavaScript 就能完成。</p>
+<p>jQuery 已經用很久了，我認為這是個移除 jQuery 的最佳時機。把這個套件移除掉，可以讓整個專案輕量非常多。</p>
+<h2 id="撤除對-IE-10-的支援"><a href="#撤除對-IE-10-的支援" class="headerlink" title="撤除對 IE 10 的支援"></a><strong>撤除對 IE 10 的支援</strong></h2><p>IE 10 的用戶，在全世界的瀏覽器使用者中，不到 1 %。考量到從 2016年開始，微軟已經不再對 IE 10 以前（包含 10）的版本做支援，這是個可以理解的改變。</p>
+<h3 id="客製化-SVG-icon-圖庫-🚀"><a href="#客製化-SVG-icon-圖庫-🚀" class="headerlink" title="客製化 SVG  icon 圖庫 🚀"></a><strong>客製化 SVG  icon 圖庫 🚀</strong></h3><p>個人對於 Bootstrap 4 沒有加入 icon 圖庫，感到有些失望。我們通常會在專案裡的，使用 font awesome 或是其他自製 icon，但很快地，我們可能可以改變作法了。</p>
+<p>在第 5 版，會有全新的授權 SVG icon圖庫。這些 icon 是由 Mark Otto 繪製。更棒的是，這個圖庫其實已經在去年的 <a href="https://blog.getbootstrap.com/2019/12/14/bootstrap-icons-alpha2/" target="_blank" rel="noopener">12 月釋出</a> ，你現在就可以在專案裡使用！</p>
+<h3 id="從-Jekyll-轉移到-Hugo-🔝"><a href="#從-Jekyll-轉移到-Hugo-🔝" class="headerlink" title="從 Jekyll 轉移到 Hugo 🔝"></a><strong>從 Jekyll 轉移到 Hugo 🔝</strong></h3><p>身為熱門的靜態網頁產生器，<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> 已經陪我們走過很長一段時間。然而，在近幾年，<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 已經成了公認的，最快也最推薦的產生器。我們認為這個改變，和第 4 版時，Bootstrap 從 Less 轉移到 Sass，非常相似。</p>
+<h3 id="Javascript-amp-CSS"><a href="#Javascript-amp-CSS" class="headerlink" title="Javascript &amp; CSS"></a><strong>Javascript &amp; CSS</strong></h3><p>因為 jQuery 將會從專案中移除，我們可以預期核心的 JavaScript 檔案會有重大更新，也預計會有相關的 event listener、事件選項的新使用文件。至於 CSS，雖然新版本不會有更新，但我們認為可能會有一些優化、類別更新、和一般的修正。</p>
+<p>總之，Bootstrap 5 應當變得更快、更簡單、也更好看。不過，別期待元件會有重大的更新，對於它們協助我們為使用者開發美觀、且載入時間短的使用者介面，節省許多時間，我們反倒需要心懷感謝。</p>
+<p>如果你在專案中使用 bootstrap，請考慮我們的<a href="https://themesberg.com/products/bootstrap-themes" target="_blank" rel="noopener">免費 / 付費 Bootstrap 模板</a> 🙏。</p>
+<p>*</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
+              <a href="/tags/Bootstrap/" rel="tag"># Bootstrap</a>
+              <a href="/tags/%E7%BF%BB%E8%AD%AF/" rel="tag"># 翻譯</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/" rel="prev" title="vue cli中使用bootstrap的JS元件">
+      <i class="fa fa-chevron-left"></i> vue cli中使用bootstrap的JS元件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/10/Vue-checkbox%E8%88%87true-false-value/" rel="next" title="..">
+      .. <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap-5-的釋出時間"><span class="nav-number">1.</span> <span class="nav-text">Bootstrap 5 的釋出時間</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有什麼新東西？"><span class="nav-number">2.</span> <span class="nav-text">有什麼新東西？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移除-jQuery-😱"><span class="nav-number">2.1.</span> <span class="nav-text">移除 jQuery 😱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤除對-IE-10-的支援"><span class="nav-number">3.</span> <span class="nav-text">撤除對 IE 10 的支援</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客製化-SVG-icon-圖庫-🚀"><span class="nav-number">3.1.</span> <span class="nav-text">客製化 SVG  icon 圖庫 🚀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#從-Jekyll-轉移到-Hugo-🔝"><span class="nav-number">3.2.</span> <span class="nav-text">從 Jekyll 轉移到 Hugo 🔝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript-amp-CSS"><span class="nav-number">3.3.</span> <span class="nav-text">Javascript &amp; CSS</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Myia</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">Kategorien</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">schlagwörter</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myia</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Design – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
