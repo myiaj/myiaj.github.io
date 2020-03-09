@@ -90,7 +90,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Cambiar a barra de navegación">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -122,17 +122,17 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Inicio</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Etiquetas</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archivo</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
 
   </li>
   </ul>
@@ -184,27 +184,27 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Publicado el</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Creado por: 2020-03-10 00:32:04 / Modificado por: 00:33:40" itemprop="dateCreated datePublished" datetime="2020-03-10T00:32:04+08:00">2020-03-10</time>
+              <time title="Erstellt: 2020-03-10 00:32:04 / Geändert am: 00:38:56" itemprop="dateCreated datePublished" datetime="2020-03-10T00:32:04+08:00">2020-03-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">En</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端技術筆記</span></a>
                 </span>
             </span>
 
           
-            <span class="post-meta-item" title="Visitas">
+            <span class="post-meta-item" title="Aufrufe">
               <span class="post-meta-item-icon">
                 <i class="fa fa-users"></i>
               </span>
-              <span class="post-meta-item-text">Visitas: </span>
+              <span class="post-meta-item-text">Aufrufe: </span>
               <span class="firestore-visitors-count"></span>
             </span>
 
@@ -221,15 +221,14 @@
 <li>checkbox 和 true-value / false-value 的搭配使用</li>
 </ul>
 <p>在 Vue 中，透過 v-model 做雙向綁定的資料，預設的值只有true 或是 false 兩種選項。如果 checkbox 勾選了，綁定的變數值改為 true、不勾選擇為 false。然而，在實務經驗的表單製作上，常需要更靈活的運用。例如，勾選時，綁定的變數顯示為男性，而不勾選時則為女性等等。</p>
-<p>這個時候，我們就可以透過 true-value、false-value 來做進一步的表單操作。如下：</p>
-<pre><code>&lt;input type=&quot;checkbox&quot;
-     v-model=&quot;gender&quot;
-     :true-value=&quot;男&quot;
-     :false-value=&quot;女&quot;
-&gt;</code></pre><p>如此一來，當 checkbox 被勾選後，在 data 裡的 gender 這個屬性的值，就會被改為「男」，而不是 true；反之亦然。這樣，我們在實際的表單操作上，就可以透過這筆資料，做更進一步的操作。</p>
-<p>*PS. 在 true-value / false-value 的程式碼中，我們可能有時候會看到 v-bind: ，有時則否。當有 v-bind 符號時，表示這個 checkbox 會進一步地修改資料的內容；否則只是單純顯示不同的字串，但沒有做資料的綁定。</p>
-<p>參考資料：<a href="https://stackoverflow.com/questions/41076832/vuejs2-checkbox-v-bindtrue-value-is-not-working" target="_blank" rel="noopener">https://stackoverflow.com/questions/41076832/vuejs2-checkbox-v-bindtrue-value-is-not-working</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/10/Vue-checkbox%E8%88%87true-false-value/#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -270,27 +269,27 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Publicado el</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Creado por: 2020-03-09 00:10:48 / Modificado por: 00:39:02" itemprop="dateCreated datePublished" datetime="2020-03-09T00:10:48+08:00">2020-03-09</time>
+              <time title="Erstellt: 2020-03-09 00:10:48 / Geändert am: 00:39:02" itemprop="dateCreated datePublished" datetime="2020-03-09T00:10:48+08:00">2020-03-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">En</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E9%97%9C%E7%BF%BB%E8%AD%AF/" itemprop="url" rel="index"><span itemprop="name">前端相關翻譯</span></a>
                 </span>
             </span>
 
           
-            <span class="post-meta-item" title="Visitas">
+            <span class="post-meta-item" title="Aufrufe">
               <span class="post-meta-item-icon">
                 <i class="fa fa-users"></i>
               </span>
-              <span class="post-meta-item-text">Visitas: </span>
+              <span class="post-meta-item-text">Aufrufe: </span>
               <span class="firestore-visitors-count"></span>
             </span>
 
@@ -310,7 +309,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/09/Bootstrap-5/#more" rel="contents">
-                Leer más &raquo;
+                Weiterlesen &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -355,27 +354,27 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Publicado el</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Creado por: 2020-03-07 13:07:22 / Modificado por: 17:16:48" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 17:16:48" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">En</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">前端技術筆記</span></a>
                 </span>
             </span>
 
           
-            <span class="post-meta-item" title="Visitas">
+            <span class="post-meta-item" title="Aufrufe">
               <span class="post-meta-item-icon">
                 <i class="fa fa-users"></i>
               </span>
-              <span class="post-meta-item-text">Visitas: </span>
+              <span class="post-meta-item-text">Aufrufe: </span>
               <span class="firestore-visitors-count"></span>
             </span>
 
@@ -393,7 +392,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/#more" rel="contents">
-                Leer más &raquo;
+                Weiterlesen &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -438,33 +437,33 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Publicado el</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-              <time title="Creado por: 2020-03-03 14:17:51" itemprop="dateCreated datePublished" datetime="2020-03-03T14:17:51+08:00">2020-03-03</time>
+              <time title="Erstellt: 2020-03-03 14:17:51" itemprop="dateCreated datePublished" datetime="2020-03-03T14:17:51+08:00">2020-03-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 2020-03-07 17:17:50" itemprop="dateModified" datetime="2020-03-07T17:17:50+08:00">2020-03-07</time>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-03-07 17:17:50" itemprop="dateModified" datetime="2020-03-07T17:17:50+08:00">2020-03-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">En</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E9%83%A8%E8%90%BD%E6%A0%BC/" itemprop="url" rel="index"><span itemprop="name">部落格</span></a>
                 </span>
             </span>
 
           
-            <span class="post-meta-item" title="Visitas">
+            <span class="post-meta-item" title="Aufrufe">
               <span class="post-meta-item-icon">
                 <i class="fa fa-users"></i>
               </span>
-              <span class="post-meta-item-text">Visitas: </span>
+              <span class="post-meta-item-text">Aufrufe: </span>
               <span class="firestore-visitors-count"></span>
             </span>
 
@@ -481,7 +480,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/#more" rel="contents">
-                Leer más &raquo;
+                Weiterlesen &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -526,18 +525,18 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Publicado el</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Creado por: 2020-03-03 14:16:35 / Modificado por: 14:32:18" itemprop="dateCreated datePublished" datetime="2020-03-03T14:16:35+08:00">2020-03-03</time>
+              <time title="Erstellt: 2020-03-03 14:16:35 / Geändert am: 14:32:18" itemprop="dateCreated datePublished" datetime="2020-03-03T14:16:35+08:00">2020-03-03</time>
             </span>
 
           
-            <span class="post-meta-item" title="Visitas">
+            <span class="post-meta-item" title="Aufrufe">
               <span class="post-meta-item-icon">
                 <i class="fa fa-users"></i>
               </span>
-              <span class="post-meta-item-text">Visitas: </span>
+              <span class="post-meta-item-text">Aufrufe: </span>
               <span class="firestore-visitors-count"></span>
             </span>
 
@@ -555,7 +554,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/03/how-to-get-traffic/#more" rel="contents">
-                Leer más &raquo;
+                Weiterlesen &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -619,10 +618,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Tabla de contenidos
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          Inicio
+          Übersicht
         </li>
       </ul>
 
@@ -642,19 +641,19 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">entradas</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categorías</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">7</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -689,10 +688,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Myia</span>
 </div>
-  <div class="powered-by">Creado mediante <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Tema – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
+  <div class="theme-info">Design – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
   </div>
 
         
