@@ -20,21 +20,24 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就">
+  <meta name="description" content="監聽網頁元素是否進入用戶的 viewport 裡。在許多網頁裡，我們常常會遇到 JS 的功能。其中一個非常常見、常見到我們可能會以為這樣的功能應該不會太難做，就是當我們把網頁卷軸往下方滾動時，網頁會出現的變化，例如 navbar (網頁最上方的導覽列）出現顏色、透明度的變化，或是跳出「go to top」之類的按鈕。這樣的功能可以用 jQuery 很快速地做出來。大致上的概念是：監聽網頁卷軸滾動的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue cli中使用bootstrap的JS元件">
-<meta property="og:url" content="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/index.html">
+<meta property="og:title" content="【JS】 Intersection Observer(I) 基礎概念">
+<meta property="og:url" content="http://yoursite.com/2020/03/10/JS-Intersection-Observer-basics/index.html">
 <meta property="og:site_name" content="Myia&#39;s blog">
-<meta property="og:description" content="一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就">
+<meta property="og:description" content="監聽網頁元素是否進入用戶的 viewport 裡。在許多網頁裡，我們常常會遇到 JS 的功能。其中一個非常常見、常見到我們可能會以為這樣的功能應該不會太難做，就是當我們把網頁卷軸往下方滾動時，網頁會出現的變化，例如 navbar (網頁最上方的導覽列）出現顏色、透明度的變化，或是跳出「go to top」之類的按鈕。這樣的功能可以用 jQuery 很快速地做出來。大致上的概念是：監聽網頁卷軸滾動的">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-03-07T05:07:22.000Z">
-<meta property="article:modified_time" content="2020-03-07T09:16:48.279Z">
+<meta property="og:image" content="http://yoursite.com/img/intersection_observer_entries.png">
+<meta property="article:published_time" content="2020-03-10T14:32:30.000Z">
+<meta property="article:modified_time" content="2020-03-10T15:07:58.863Z">
 <meta property="article:author" content="Myia">
 <meta property="article:tag" content="w3HexSchool">
-<meta property="article:tag" content="Vue cli">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Intersection Observer">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/img/intersection_observer_entries.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/">
+<link rel="canonical" href="http://yoursite.com/2020/03/10/JS-Intersection-Observer-basics/">
 
 
 <script id="page-configurations">
@@ -46,7 +49,7 @@
   };
 </script>
 
-  <title>vue cli中使用bootstrap的JS元件 | Myia's blog</title>
+  <title>【JS】 Intersection Observer(I) 基礎概念 | Myia's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159077278-1"></script>
     <script>
@@ -180,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/vue-cli%E4%B8%AD%E4%BD%BF%E7%94%A8bootstrap%E7%9A%84JS%E5%85%83%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/10/JS-Intersection-Observer-basics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -193,7 +196,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vue cli中使用bootstrap的JS元件
+          【JS】 Intersection Observer(I) 基礎概念
         </h1>
 
         <div class="post-meta">
@@ -204,7 +207,7 @@
               <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="Erstellt: 2020-03-07 13:07:22 / Geändert am: 17:16:48" itemprop="dateCreated datePublished" datetime="2020-03-07T13:07:22+08:00">2020-03-07</time>
+              <time title="Erstellt: 2020-03-10 22:32:30 / Geändert am: 23:07:58" itemprop="dateCreated datePublished" datetime="2020-03-10T22:32:30+08:00">2020-03-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -227,49 +230,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>一般來說，如果要在 Vue cli 中使用 bootstrap 的 modal （或是其他 JS 元件），只要在 Vue cli 中的進入點，main.js 這支檔案中，匯入 bootstrap 即可。在這個部分，Vue cli 可能會提醒你要安裝 jquery 和 popper.js 兩支檔案，因為 bootstrap 的 JS 元件就是用這兩個函式庫寫成的。這時候，只要跟著 npm 的指令做就可以了。</p>
-<p>安裝了 jqeury，也把 bootstrap 匯入 Vue 專案中後，我們就可以把 modal 這個元件寫到 Vue 元件的 template 部分裡，不需要額外寫其他程式碼，這個 modal 就會運行了。這部分和我們一般在寫 bootstrap 時一樣。</p>
+        <p>監聽網頁元素是否進入用戶的 viewport 裡。在許多網頁裡，我們常常會遇到 JS 的功能。其中一個非常常見、常見到我們可能會以為這樣的功能應該不會太難做，就是當我們把網頁卷軸往下方滾動時，網頁會出現的變化，例如 navbar (網頁最上方的導覽列）出現顏色、透明度的變化，或是跳出「go to top」之類的按鈕。這樣的功能可以用 jQuery 很快速地做出來。大致上的概念是：監聽網頁卷軸滾動的狀態、持續地取得卷軸位置與該網頁頂部的距離、如果這個距離大於某些數值執行特定的函式（以導覽列為例，可能就是改變 class 名稱，以改變這個導覽列的樣式）。</p>
+<p>一般我們可以使用 jQuery 或是、純 JS 監聽卷軸事件。</p>
+<p>不過，因為「卷軸滾動」這樣的事件，不像是按鈕是非常態事件（正常狀態的使用下，沒有用戶會持續性地觸發按鈕），卷軸滾動是一個常態事件，不管做任何事情，基本上用戶都會滾動卷軸；也就是說，在用戶瀏覽網頁時，卷軸監聽的事件就會一直被觸發，直到關掉網頁為止。這樣看來，基於 JS 是單一執行序的程式語言，如果在瀏覽網頁、卷軸滾動時，網頁莫名地卡住一小段時間，或許就不會是太令人意外的事情了。</p>
+<p>針對這個問題，有其他的解法。瀏覽器（除了 IE 11）有個 Web API：Intersection Observer，供我們觀測某個網頁元素是否進入 viewport。</p>
 <a id="more"></a>
 
-<h2 id="兩種使用-bootstrap-的-JS-元件方法，以-modal-為例"><a href="#兩種使用-bootstrap-的-JS-元件方法，以-modal-為例" class="headerlink" title="兩種使用 bootstrap 的 JS 元件方法，以 modal 為例"></a>兩種使用 bootstrap 的 JS 元件方法，以 modal 為例</h2><p>在 bootstrap 的 modal 使用說明中，該篇文章的結語部分，提到「有兩種使用 modal 的方法」：</p>
-<ol>
-<li>透過 data-* 屬性 ( 把 bootstrap 提供的 HTML 貼到自己的 HTML 檔裡 )</li>
-<li>透過 JavaScript ( 部分自己寫 JS 程式碼、部分使用 bootstrap 寫好的程式碼 )</li>
+<h2 id="Intersection-Observer-是什麼？"><a href="#Intersection-Observer-是什麼？" class="headerlink" title="Intersection Observer 是什麼？"></a>Intersection Observer 是什麼？</h2><p>在網頁的瀏覽中，我們把瀏覽器的視窗大小稱為 viewport，瀏覽器的可見範圍。一個網頁頁面通常會大於這個 viewport。透過卷軸，我們才可以瀏覽整個頁面。Intersection Observer 就是在偵測使用者瀏覽網頁時，特定的網頁元素是否進入這個瀏覽器的可見範圍內。這個網頁元素不管是從哪個方向進入瀏覽器的可計範圍，都會被偵測到。（圖例）</p>
+<p>我們透過 intersection observer 的建構式，在網頁架起一個觀測器。然後，在執行的時候，再跟這個觀測器說，我要觀測哪個目標，這個觀測器就會在網頁上觀察這個目標。當目標進入視線時，這個觀測器就會建立一個陣列，例面紀錄了標的物的狀態。在這個標的物離開、甚至再次進入視線時，觀測器都會即時更新資訊。</p>
+<p>另外，intersection observer 可以觀測單個或多個網頁元素。不過，以下我先就單個網頁元素做說明。</p>
+<h2 id="使用方式："><a href="#使用方式：" class="headerlink" title="使用方式："></a>使用方式：</h2><h3 id="架一個偵測器"><a href="#架一個偵測器" class="headerlink" title="架一個偵測器"></a>架一個偵測器</h3><ul>
+<li>需要的材料：<ol>
+<li>一個 function（方法和event listener 的 function 一樣）</li>
+<li>（選用）options，下一篇文章才會講到。</li>
 </ol>
-<h2 id="透過-data-屬性"><a href="#透過-data-屬性" class="headerlink" title="透過 data-* 屬性"></a>透過 data-* 屬性</h2><p>透過 data-* 屬性是一般使用 modal 的方法。透過 bootstrap 提供的 HTML 程式碼在網頁中使用 modal 這個元件 。這段程式碼裡，包含了 data-toggle 和 data-target 兩個屬性，我們便是透過這兩個屬性讓 bootstrap 的 JS 程式碼去選取 我們網頁的 DOM 元素。bootstrap 透過 data-toggle 選取相對應的事件觸發元素（例如，button），再透過 data-target 選取 modal 本身（那個跳出來的 div）。</p>
-<p>我們可以想像在 bootstrap 的 JS 程式碼中，可能是這樣：</p>
-<p>/* 這不是 bootstrap 的程式碼，是我猜測 bootstrap 可能會這樣寫：*/</p>
-<pre><code>const button = // 用 jquery 的方式選取有 data-toggle 的 DOM 元素 //
-const target = // data-target的值 //
-const modal = // 用 target 選取 DOM 元素，也就是 modal 本身 //
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;observer function、偵測到某物件在可見範圍內，欲執行的動作</span><br><span class="line">function observeHandler() &#123;</span><br><span class="line">        &#x2F;&#x2F; do something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-button.addEventListener(&apos;click&apos;, toggleDOM(modal));
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;抓取想要偵測的網頁元素, 意味著我們想要偵測這個網頁元素有沒有進入視窗的可見範圍</span><br><span class="line"> const element &#x3D; &#x2F;&#x2F; Select a DOM...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;  把上方兩個東西，代入 IntersectionObserver 的建構式</span><br><span class="line">    const observer &#x3D; new IntersectionObserver(observeHandler); &#x2F;&#x2F; 建立偵測器</span><br><span class="line">    observer.observe(element); &#x2F;&#x2F; 執行偵測器、並且告訴這個偵測器要偵測什麼東西</span><br></pre></td></tr></table></figure>
 
-function toggleDOM(modal){
-        // button被觸發後，modal的行為
-}</code></pre><h2 id="自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。"><a href="#自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。" class="headerlink" title="自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。"></a>自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。</h2><h3 id="jquery-的寫法、一些基本概念"><a href="#jquery-的寫法、一些基本概念" class="headerlink" title="jquery 的寫法、一些基本概念"></a>jquery 的寫法、一些基本概念</h3><p>由於 bootstrap 是使用 jquery 去撰寫 JS 元件的程式碼，所以在這部分我們一樣也是使用 jquery 的方法選取 DOM 元素。在一組 modal 中，我們需要兩個 DOM 元素：</p>
-<ol>
-<li>觸發的按鈕</li>
-<li>modal 本身</li>
-</ol>
-<p>因此，我們只要透過 jquery 的方式，選取這兩個 DOM 元素即可。</p>
-<pre><code>$(&apos;button&apos;).click(function(){
-            $(&apos;#myModal&apos;).modal(options); //這行是 bootstrap 提供的程式碼
-})</code></pre><p>在這邊我們會發現，不管是透過第一種 data的方法，還是 $(‘’) 這個方法，最主要的差別只是用不同的方式選取 DOM 元素。因為，我們已經用 $(‘’) 代替了 data-toggle 和 data-target 。所以，當我們使用第二種 $(‘’) 的方法時，我們就必須把 HTML 的程式碼中，data-* 的屬性拿掉。</p>
-<h3 id="在-Vue-cli-的元件中…"><a href="#在-Vue-cli-的元件中…" class="headerlink" title="在 Vue cli 的元件中…"></a>在 Vue cli 的元件中…</h3><p>概念上和 上述 jquery 的寫法差不多，就是用 Vue.js 的語法寫按鈕事件，只是在 methods 的部分，我們使用 jqeury 的方式選取 DOM，event handler 用的是 bootstrap 寫好的方法： </p>
-<pre><code>&lt;button @click=&quot;callModal&quot;&gt;
+<h3 id="附註"><a href="#附註" class="headerlink" title="附註"></a>附註</h3><p>在使用 eventListener時，我們可以在 event handler 裡代入一個 e、查閱事件被驅動的資訊。intersection Observer 的 function 也可以做一樣的查閱。在代入 Intersection Observer 建構式中的function中，我們再代入一個參數（常用entries / entry ），就可以查看這個觀測器觀測到目標的狀態：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function observeHandler(entry) &#123;</span><br><span class="line">	console.log(entry);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用 entries 或是 entry 都可以</span><br></pre></td></tr></table></figure>
 
-//... 中間很多程式碼 ...//
+<p>下圖是 console.log 的顯示結果，這兩個陣列是不同時間顯示出來的，可以看見 time 的時間不一樣。第一個陣列是目標離開可見範圍跳出來的紀錄、第二個陣列是觀測目標重新回到視線範圍的紀錄。我們可以從 isIntersecting 的 true / false 可以看出這個標的物是否在視線範圍內。</p>
+<p><img src="/img/intersection_observer_entries.png" alt="alt callback_entry"></p>
+<p>*</p>
+<h2 id="直接看範例："><a href="#直接看範例：" class="headerlink" title="直接看範例："></a>直接看範例：</h2><p>說了這麼多，還是不比範例清晰：</p>
+<iframe src="https://codepen.io/mia-jian/embed/oNXpMmZ?height=265&theme-id=dark&default-tab=js,result" width="100%" height="300" frameborder="0" loading="lazy" allowfullscreen></iframe>
 
-methods: {
-    callModal() {
-        $(&apos;#myModal&apos;).modal(&apos;options&apos;);
-        }
-}</code></pre><p>在這邊，如果使用了 ESlint 的話，可能會跳出錯誤訊息。這是因為，在這個元件中，我們並沒有定義 $ 是什麼。如果要解決這個方法，我們就需要把 $ 這個變數匯入元件當中：</p>
-<pre><code>import $ form &apos;jquery&apos;</code></pre><h2 id="為什麼要用第二種方法？"><a href="#為什麼要用第二種方法？" class="headerlink" title="為什麼要用第二種方法？"></a>為什麼要用第二種方法？</h2><p>透過第二種方法，我們就可以進一步使用其他方式決定 modal 跳出的時間，優化使用者體驗。例如，在第二種方法中，我們可以用 ajax 的方式，讓呼叫 modal 的按鈕在被觸發後，稍作等待，等待 ajax 取得資料後，再讓相對應的 modal 跳出。這樣做的用意，是為了確保 modal 有資料後，才會呈現給使用者。</p>
-<hr>
-<p>**關於在Vue cli 中使用 jquery 這篇文章有更詳細的說明：</p>
-<p><a href="https://pjchender.github.io/2017/09/26/vue-%E5%9C%A8-vue-%E4%B8%AD%E4%BD%BF%E7%94%A8%EF%BC%88es6-import%EF%BC%89-bootstrap4-%E5%92%8C-jquery/" target="_blank" rel="noopener">https://pjchender.github.io/2017/09/26/vue-在-vue-中使用（es6-import）-bootstrap4-和-jquery/</a></p>
 
     </div>
 
@@ -280,7 +270,8 @@ methods: {
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
-              <a href="/tags/Vue-cli/" rel="tag"># Vue cli</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/Intersection-Observer/" rel="tag"># Intersection Observer</a>
           </div>
 
         
@@ -289,13 +280,10 @@ methods: {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/03/BERT_blogger%E8%A7%80%E9%BB%9E/" rel="prev" title="對於 Google BERT 演算法的感想">
-      <i class="fa fa-chevron-left"></i> 對於 Google BERT 演算法的感想
+    <a href="/2020/03/10/Vue-checkbox%E8%88%87true-false-value/" rel="prev" title="Vue - checkbox 的雙向綁定，透過true/false 修改資料內容">
+      <i class="fa fa-chevron-left"></i> Vue - checkbox 的雙向綁定，透過true/false 修改資料內容
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/09/Bootstrap-5/" rel="next" title="Bootstrap 5 的釋出時間、以及會有哪些更新">
-      Bootstrap 5 的釋出時間、以及會有哪些更新 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -355,7 +343,7 @@ methods: {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#兩種使用-bootstrap-的-JS-元件方法，以-modal-為例"><span class="nav-number">1.</span> <span class="nav-text">兩種使用 bootstrap 的 JS 元件方法，以 modal 為例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透過-data-屬性"><span class="nav-number">2.</span> <span class="nav-text">透過 data-* 屬性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己選取-DOM-元素，但是使用-bootstrap-的-JS-程式碼。"><span class="nav-number">3.</span> <span class="nav-text">自己選取 DOM 元素，但是使用 bootstrap 的 JS 程式碼。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jquery-的寫法、一些基本概念"><span class="nav-number">3.1.</span> <span class="nav-text">jquery 的寫法、一些基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Vue-cli-的元件中…"><span class="nav-number">3.2.</span> <span class="nav-text">在 Vue cli 的元件中…</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼要用第二種方法？"><span class="nav-number">4.</span> <span class="nav-text">為什麼要用第二種方法？</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intersection-Observer-是什麼？"><span class="nav-number">1.</span> <span class="nav-text">Intersection Observer 是什麼？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方式："><span class="nav-number">2.</span> <span class="nav-text">使用方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#架一個偵測器"><span class="nav-number">2.1.</span> <span class="nav-text">架一個偵測器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附註"><span class="nav-number">2.2.</span> <span class="nav-text">附註</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接看範例："><span class="nav-number">3.</span> <span class="nav-text">直接看範例：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
