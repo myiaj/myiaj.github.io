@@ -1193,7 +1193,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #5e0d59;
+  background: #2491cf;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2441,4 +2441,30 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-blogroll-item {
   padding: 0;
+}
+body {
+  background-color: #f2f2ff;
+  color: #5b4a46;
+}
+.headband {
+  background: #0f5257;
+}
+.site-brand-container {
+  background-color: #ff9f1c;
+}
+.site-meta .brand {
+  font-weight: 900;
+  color: #fdfffc;
+}
+.site-meta .site-subtitle {
+  color: #fdfffc;
+}
+.post-title .post-title-link {
+  color: #0f5257;
+}
+.post-meta span {
+  color: #00a896;
+}
+.post-title[itemprop="name headline"] {
+  color: #0f5257;
 }
