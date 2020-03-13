@@ -1193,7 +1193,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2491cf;
+  background: #81ff81;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2447,7 +2447,7 @@ body {
   color: #5b4a46;
 }
 .headband {
-  background: #0f5257;
+  height: 0px;
 }
 .site-brand-container {
   background-color: #ff9f1c;
@@ -2459,11 +2459,16 @@ body {
 .site-meta .site-subtitle {
   color: #fdfffc;
 }
+.content-wrap {
+  margin: 3vh 2vw;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px rgba(224,207,188,0.7);
+}
 .post-title .post-title-link {
-  color: #0f5257;
+  color: #00a896;
 }
 .post-meta span {
-  color: #00a896;
+  color: $0F5257;
 }
 .post-title[itemprop="name headline"] {
   color: #0f5257;
