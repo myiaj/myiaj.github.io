@@ -1193,7 +1193,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2fff58;
+  background: #29ff55;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2443,11 +2443,18 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
 }
 body {
-  background-color: #fffbea;
+  background: #fffbea;
   color: #5b4a46;
 }
+body a {
+  color: #9e9381;
+}
+body a:hover {
+  color: #f56416;
+}
 .headband {
-  height: 0px;
+  height: 3px;
+  background: #05a096;
 }
 .site-brand-container {
   background-color: #ff9f1c;
@@ -2465,11 +2472,25 @@ body {
   box-shadow: 1px 5px 8px #e5cfa5;
 }
 .post-title .post-title-link {
-  color: #00a896;
+  color: #05a096;
 }
 .post-meta span {
   color: $0F5257;
 }
 .post-title[itemprop="name headline"] {
   color: #0f5257;
+}
+.posts-collapse .post-title a,
+.posts-collapse .post-title span.exturl {
+  color: #7f6b55;
+}
+.posts-collapse article[itemscope]:hover .post-header,
+.posts-collapse article[itemscope]:hover .post-title-link span {
+  color: #f56416;
+}
+.posts-collapse .post-header:hover {
+  border-bottom-color: #5b4a46;
+}
+.posts-collapse .post-header:hover::before {
+  background: #f56416;
 }
