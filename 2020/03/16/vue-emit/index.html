@@ -21,17 +21,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。 同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製">
+  <meta name="description" content="如果我們想要從子元件傳遞資料到母元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到母元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。 同樣的，子元件要投遞資料到母元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Vue】$emit，透過客製化事件把子元件的資料傳到根元件">
 <meta property="og:url" content="http://yoursite.com/2020/03/16/vue-emit/index.html">
 <meta property="og:site_name" content="Myia&#39;s blog">
-<meta property="og:description" content="如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。 同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製">
+<meta property="og:description" content="如果我們想要從子元件傳遞資料到母元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到母元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。 同樣的，子元件要投遞資料到母元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="http://yoursite.com/post_img/vue_emit.png">
 <meta property="og:image" content="http://yoursite.com/post_img/web_materials/line_bright.png">
 <meta property="article:published_time" content="2020-03-16T15:16:07.000Z">
-<meta property="article:modified_time" content="2020-03-16T15:17:15.471Z">
+<meta property="article:modified_time" content="2020-03-16T15:41:20.183Z">
 <meta property="article:author" content="Myia">
 <meta property="article:tag" content="w3HexSchool">
 <meta name="twitter:card" content="summary">
@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:17:15" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
+              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:41:20" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,8 +231,8 @@
 
       
         <p><img src="/post_img/vue_emit.png" alt="外部資料傳遞進元件裡"></p>
-<p>如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。</p>
-<p>同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
+<p>如果我們想要從子元件傳遞資料到母元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到母元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。</p>
+<p>同樣的，子元件要投遞資料到母元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
 <a id="more"></a>
 <p>&ensp;<br><img src="/post_img/web_materials/line_bright.png" alt="分隔線"></p>
 <h2 id="根元件觸發事件的過程"><a href="#根元件觸發事件的過程" class="headerlink" title="根元件觸發事件的過程"></a>根元件觸發事件的過程</h2><p>先來複習一下根元件綁定事件的過程：</p>
@@ -242,7 +242,7 @@
 <p>^</p>
 <h2 id="子元件呼叫根元件的-method"><a href="#子元件呼叫根元件的-method" class="headerlink" title="子元件呼叫根元件的 method"></a>子元件呼叫根元件的 method</h2><p>如果，我們今天要將 <code>incrementTotal</code> 綁定到元件上，是不可行的。像這樣：</p>
 <p><code>&lt;component @click=&quot;incrementTotal&quot;&gt;&lt;/component&gt;</code> (錯誤示範)</p>
-<p>這是因為，我們無法在子元件直接使用根元件的任何東西，data、methods 都是。如果想要使用根元件的事件，我們就需要在子元件建立一個客製化事件(custom event)，再透過這個事件的指令呼叫根元件的 method。</p>
+<p>這是因為，我們無法在子元件直接使用母元件的任何東西，data、methods 都是。如果想要使用母元件的事件，我們就需要在子元件建立一個客製化事件(custom event)，再透過這個事件的指令呼叫母元件的 method。</p>
 <h3 id="子元件中"><a href="#子元件中" class="headerlink" title="子元件中"></a>子元件中</h3><h4 id="x-template"><a href="#x-template" class="headerlink" title="x-template"></a>x-template</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"incrementCounter"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-primary"</span>&gt;</span>增加 &#123;&#123; counter &#125;&#125; 元<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>子元件的 template 事件呼叫建立客製化事件的函式</strong><br>^</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'component'</span>,&#123;</span><br><span class="line">    <span class="comment">//...略</span></span><br><span class="line">    methods: &#123;</span><br><span class="line">        incrementCounter: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'increment'</span>); <span class="comment">//建立一個客製化事件</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -256,13 +256,13 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">component</span> @<span class="attr">custom-event</span>=<span class="string">"rootMethod"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>這樣就達成子元件呼叫根元件的目的了。</p>
-<h2 id="那資料呢？"><a href="#那資料呢？" class="headerlink" title="那資料呢？"></a>那資料呢？</h2><p>說了這麼多，還沒講到資料。資料的部分，也是透過 <code>this.$emit()</code> 這個方法傳遞的。在這個方法中，第一個參數為這個客製化事件的名稱，第二的參數就是要投擲到根元件的資料啦！如下：</p>
+<h2 id="那資料呢？"><a href="#那資料呢？" class="headerlink" title="那資料呢？"></a>那資料呢？</h2><p>說了這麼多，還沒講到資料。資料的部分，也是透過 <code>this.$emit()</code> 這個方法傳遞的。在這個方法中，第一個參數為這個客製化事件的名稱，第二的參數就是要投擲到母元件的資料啦！如下：</p>
 <h3 id="子元件"><a href="#子元件" class="headerlink" title="子元件"></a>子元件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$emit(<span class="string">'name'</span>, <span class="keyword">this</span>.dataName)</span><br></pre></td></tr></table></figure>
 
-<p>不過，這樣還沒結束。在跨元件的傳遞中，如果設定了一方，另一方一定也會有相對應的設定。這樣 Vue 才會知道，要在哪「兩個」元件之間做傳遞。所以，在這個範例中，子元件已經做好傳遞資料的準備，根元件當然也要有個地方接收子元件的資料。因為上述都是和事件相關的設定，想當然根元件接收資料的地方，也會是在 methods 裏頭：</p>
-<h3 id="根元件"><a href="#根元件" class="headerlink" title="根元件"></a>根元件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    rootMethod(num)&#123;</span><br><span class="line">        <span class="keyword">this</span>.dataName += num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不過，這樣還沒結束。在跨元件的傳遞中，如果設定了一方，另一方一定也會有相對應的設定。這樣 Vue 才會知道，要在哪「兩個」元件之間做傳遞。所以，在這個範例中，子元件已經做好傳遞資料的準備，根元件當然也要有個地方接收子元件的資料。因為上述都是和事件相關的設定，想當然母元件接收資料的地方，也會是在 methods 裏頭：</p>
+<h3 id="母元件"><a href="#母元件" class="headerlink" title="母元件"></a>母元件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    rootMethod(num)&#123;</span><br><span class="line">        <span class="keyword">this</span>.dataName += num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>…<br>記得嗎？上述我們透過客製化事件呼叫根元件的函式　<code>&lt;component　@custom-evnet=&quot;rootMethod&quot;&gt;&lt;/component&gt;</code>，如果要接收資料，透過在這個函式建立一個參數，Vue 就會知道這個參數等於子元件傳出來的資料了。</p>
-<p>如此一來，我們就能透過根元件做子元件資料的計算。</p>
+<p>如此一來，我們就能透過母元件做子元件資料的計算。</p>
 
     </div>
 
@@ -344,7 +344,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#根元件觸發事件的過程"><span class="nav-number">1.</span> <span class="nav-text">根元件觸發事件的過程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子元件呼叫根元件的-method"><span class="nav-number">2.</span> <span class="nav-text">子元件呼叫根元件的 method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件中"><span class="nav-number">2.1.</span> <span class="nav-text">子元件中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-template"><span class="nav-number">2.1.1.</span> <span class="nav-text">x-template</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那資料呢？"><span class="nav-number">3.</span> <span class="nav-text">那資料呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件"><span class="nav-number">3.1.</span> <span class="nav-text">子元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根元件"><span class="nav-number">3.2.</span> <span class="nav-text">根元件</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#根元件觸發事件的過程"><span class="nav-number">1.</span> <span class="nav-text">根元件觸發事件的過程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子元件呼叫根元件的-method"><span class="nav-number">2.</span> <span class="nav-text">子元件呼叫根元件的 method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件中"><span class="nav-number">2.1.</span> <span class="nav-text">子元件中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-template"><span class="nav-number">2.1.1.</span> <span class="nav-text">x-template</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那資料呢？"><span class="nav-number">3.</span> <span class="nav-text">那資料呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件"><span class="nav-number">3.1.</span> <span class="nav-text">子元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#母元件"><span class="nav-number">3.2.</span> <span class="nav-text">母元件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -21,17 +21,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="(以下是使用 CDN，而不是使用 Vue cli 的方式) 在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從父元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)">
+  <meta name="description" content="(以下是使用 CDN，而不是使用 Vue cli 的方式) 在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從母元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Vue】Props的基礎概念與用法">
 <meta property="og:url" content="http://yoursite.com/2020/03/15/vue-props-basic/index.html">
 <meta property="og:site_name" content="Myia&#39;s blog">
-<meta property="og:description" content="(以下是使用 CDN，而不是使用 Vue cli 的方式) 在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從父元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)">
+<meta property="og:description" content="(以下是使用 CDN，而不是使用 Vue cli 的方式) 在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從母元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="http://yoursite.com/post_img/vue_props_basic.png">
 <meta property="og:image" content="http://yoursite.com/post_img/web_materials/line_bright.png">
 <meta property="article:published_time" content="2020-03-15T08:50:42.000Z">
-<meta property="article:modified_time" content="2020-03-16T15:01:08.146Z">
+<meta property="article:modified_time" content="2020-03-16T15:44:18.932Z">
 <meta property="article:author" content="Myia">
 <meta property="article:tag" content="-w3HexSchool">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-03-16 23:01:08" itemprop="dateModified" datetime="2020-03-16T23:01:08+08:00">2020-03-16</time>
+                <time title="修改時間：2020-03-16 23:44:18" itemprop="dateModified" datetime="2020-03-16T23:44:18+08:00">2020-03-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,7 +238,7 @@
       
         <p><img src="/post_img/vue_props_basic.png" alt="外部資料傳遞進元件裡"></p>
 <p>(以下是使用 CDN，而不是使用 Vue cli 的方式)</p>
-<p>在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從父元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)</p>
+<p>在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從母元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)</p>
 <a id="more"></a>
 <p>&ensp;<br><img src="/post_img/web_materials/line_bright.png" alt="分隔線"><br>&ensp;<br>props 的使用方式和一般使用 data 綁定的方式非常相似。程式碼可能像是這樣：</p>
 <h2 id="一般使用-data-的方式"><a href="#一般使用-data-的方式" class="headerlink" title="一般使用 data 的方式"></a>一般使用 data 的方式</h2><p><strong>HTML</strong></p>
@@ -249,7 +249,7 @@
 <p>在元件的 template 可以看到，這個元件使用 <code>{ }</code> 的方式引用元件本身的 data 。<br>(因為 Hexo 用兩個大括號會跳錯，所以這邊我只用單個…)</p>
 <h2 id="Props-也是差不多"><a href="#Props-也是差不多" class="headerlink" title="Props 也是差不多"></a>Props 也是差不多</h2><p><strong>HTML</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">photo</span>&gt;</span><span class="tag">&lt;/<span class="name">photo</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>…<br><strong>元件</strong></p>
+<p>…<br><strong>子元件</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"photo"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">      &lt;img :src=<span class="string">"imgUrl"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"img-fluid"</span> alt=<span class="string">""</span> /&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>風景照<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&#39;photo&#39;, &#123;</span><br><span class="line">  props: [&#39;imgUrl&#39;],</span><br><span class="line">  template: &#39;#photo&#39;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -262,9 +262,10 @@
 <p><code>&lt;photo :img-url=&quot;dataName&quot;&gt;&lt;/photo&gt;</code></p>
 <p>** Vue 透過 props 名稱建立一個 HTML 屬性 **</p>
 <p>(或許你會發現，Vue 最後在 HTML 使用上，通常都是透過 HTML 的屬性做綁定，像是，@event、:class、v-for、v-if 等等。雖然要記的步驟好像很多，但是先把握住這個原則，或許會對自己掌握 Vue 的實際使用會有些幫助。)</p>
-<p>這邊使用的是根元件(也就是透過 new Vue() 建立起來的那個龐大物件)裡的 data 名稱。透過這樣的方法，我們就成功地把根元件的 data 傳到元件裡面。</p>
-<p>如果我們透過開發者工具查看元件的 props 屬性，就會有對應到的根元件資料內容。</p>
+<p>這邊使用的是根元件(也就是透過 new Vue() 建立起來的那個龐大物件)裡的 data 名稱。透過這樣的方法，我們就成功地把母/根元件的 data 傳到子元件裡面。</p>
+<p>如果我們透過開發者工具查看元件的 props 屬性，就會有對應到的母/根元件資料內容。</p>
 <h3 id="動態與靜態"><a href="#動態與靜態" class="headerlink" title="動態與靜態"></a>動態與靜態</h3><p>在上述的例子中，我們使用的是動態的傳遞方式。如果沒有冒號，只有 <code>img-url</code>，就屬靜態的傳遞方式，必須手動地把資料的內容貼在等號裡面。</p>
+<p>** 母元件(parent component)不一定是根元件</p>
 
     </div>
 

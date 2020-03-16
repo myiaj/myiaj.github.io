@@ -200,7 +200,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:17:15" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
+              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:41:20" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -224,8 +224,8 @@
 
       
           <p><img src="/post_img/vue_emit.png" alt="外部資料傳遞進元件裡"></p>
-<p>如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。</p>
-<p>同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
+<p>如果我們想要從子元件傳遞資料到母元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到母元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。</p>
+<p>同樣的，子元件要投遞資料到母元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/16/vue-emit/#more" rel="contents">
@@ -283,7 +283,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-03-16 23:01:08" itemprop="dateModified" datetime="2020-03-16T23:01:08+08:00">2020-03-16</time>
+                <time title="修改時間：2020-03-16 23:44:18" itemprop="dateModified" datetime="2020-03-16T23:44:18+08:00">2020-03-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -308,7 +308,7 @@
       
           <p><img src="/post_img/vue_props_basic.png" alt="外部資料傳遞進元件裡"></p>
 <p>(以下是使用 CDN，而不是使用 Vue cli 的方式)</p>
-<p>在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從父元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)</p>
+<p>在 Vue 中，每個元件的資料是獨立存在的。我們不能從 A 元件引用 B 元件的資料，也不能從根元件引用子元件的資料內容。偏偏，實務上，還是會需要做跨元件的資料引用。Props 就是對應到這個問題的解決方式之一。Props 負責的是從母元件傳遞資料到子元件。(至於其他的跨元件方式，則有其他的方法)</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/15/vue-props-basic/#more" rel="contents">
