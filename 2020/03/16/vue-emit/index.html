@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Noto+Serif+TC&display=swap&subset=chinese-traditional" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Crimson Text:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。 同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Vue】$emit，透過客製化事件把子元件的資料傳到根元件">
+<meta property="og:url" content="http://yoursite.com/2020/03/16/vue-emit/index.html">
+<meta property="og:site_name" content="Myia&#39;s blog">
+<meta property="og:description" content="如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。 同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://yoursite.com/post_img/vue_emit.png">
+<meta property="og:image" content="http://yoursite.com/post_img/web_materials/line_bright.png">
+<meta property="article:published_time" content="2020-03-16T15:16:07.000Z">
+<meta property="article:modified_time" content="2020-03-16T15:17:15.471Z">
+<meta property="article:author" content="Myia">
+<meta property="article:tag" content="w3HexSchool">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/post_img/vue_emit.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/16/vue-emit/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>【Vue】$emit，透過客製化事件把子元件的資料傳到根元件 | Myia's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159077278-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159077278-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Myia's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">前端技術紀錄、everything I know</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>時間表</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/vue-emit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【Vue】$emit，透過客製化事件把子元件的資料傳到根元件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:17:15" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="/post_img/vue_emit.png" alt="外部資料傳遞進元件裡"></p>
+<p>如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。</p>
+<p>同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
+<a id="more"></a>
+<p>&ensp;<br><img src="/post_img/web_materials/line_bright.png" alt="分隔線"></p>
+<h2 id="根元件觸發事件的過程"><a href="#根元件觸發事件的過程" class="headerlink" title="根元件觸發事件的過程"></a>根元件觸發事件的過程</h2><p>先來複習一下根元件綁定事件的過程：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"incrementTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button-compo</span>&gt;</span><span class="tag">&lt;/<span class="name">button-compo</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>^</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">    cash: <span class="number">300</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        incrementTotal: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.cash++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>^</p>
+<h2 id="子元件呼叫根元件的-method"><a href="#子元件呼叫根元件的-method" class="headerlink" title="子元件呼叫根元件的 method"></a>子元件呼叫根元件的 method</h2><p>如果，我們今天要將 <code>incrementTotal</code> 綁定到元件上，是不可行的。像這樣：</p>
+<p><code>&lt;component @click=&quot;incrementTotal&quot;&gt;&lt;/component&gt;</code> (錯誤示範)</p>
+<p>這是因為，我們無法在子元件直接使用根元件的任何東西，data、methods 都是。如果想要使用根元件的事件，我們就需要在子元件建立一個客製化事件(custom event)，再透過這個事件的指令呼叫根元件的 method。</p>
+<h3 id="子元件中"><a href="#子元件中" class="headerlink" title="子元件中"></a>子元件中</h3><h4 id="x-template"><a href="#x-template" class="headerlink" title="x-template"></a>x-template</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"incrementCounter"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-primary"</span>&gt;</span>增加 &#123;&#123; counter &#125;&#125; 元<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>子元件的 template 事件呼叫建立客製化事件的函式</strong><br>^</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'component'</span>,&#123;</span><br><span class="line">    <span class="comment">//...略</span></span><br><span class="line">    methods: &#123;</span><br><span class="line">        incrementCounter: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'increment'</span>); <span class="comment">//建立一個客製化事件</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，在這邊子元件中 x-template 綁定的事件 <code>incrementCounter</code> 呼叫的函式，做的事情只有 <code>this.$emit(&#39;emit-event-name&#39;)</code>。這個 $emit 就是 Vue 提供我們建立客製化事件的方法。</p>
+<p>所以，emit 雖然聽起來有些複雜，但我們需要做的，就只有：</p>
+<ol>
+<li>子元件中綁定一個建立客製化事件的事件，</li>
+<li>透過事件的綁定方式，把這個新的客製化事件，綁定到子元件的 DOM 模板中</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">component</span> @<span class="attr">custom-event</span>=<span class="string">"rootMethod"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這樣就達成子元件呼叫根元件的目的了。</p>
+<h2 id="那資料呢？"><a href="#那資料呢？" class="headerlink" title="那資料呢？"></a>那資料呢？</h2><p>說了這麼多，還沒講到資料。資料的部分，也是透過 <code>this.$emit()</code> 這個方法傳遞的。在這個方法中，第一個參數為這個客製化事件的名稱，第二的參數就是要投擲到根元件的資料啦！如下：</p>
+<h3 id="子元件"><a href="#子元件" class="headerlink" title="子元件"></a>子元件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$emit(<span class="string">'name'</span>, <span class="keyword">this</span>.dataName)</span><br></pre></td></tr></table></figure>
+
+<p>不過，這樣還沒結束。在跨元件的傳遞中，如果設定了一方，另一方一定也會有相對應的設定。這樣 Vue 才會知道，要在哪「兩個」元件之間做傳遞。所以，在這個範例中，子元件已經做好傳遞資料的準備，根元件當然也要有個地方接收子元件的資料。因為上述都是和事件相關的設定，想當然根元件接收資料的地方，也會是在 methods 裏頭：</p>
+<h3 id="根元件"><a href="#根元件" class="headerlink" title="根元件"></a>根元件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    rootMethod(num)&#123;</span><br><span class="line">        <span class="keyword">this</span>.dataName += num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>…<br>記得嗎？上述我們透過客製化事件呼叫根元件的函式　<code>&lt;component　@custom-evnet=&quot;rootMethod&quot;&gt;&lt;/component&gt;</code>，如果要接收資料，透過在這個函式建立一個參數，Vue 就會知道這個參數等於子元件傳出來的資料了。</p>
+<p>如此一來，我們就能透過根元件做子元件資料的計算。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/15/vue-props-basic/" rel="prev" title="【Vue】Props的基礎概念與用法">
+      <i class="fa fa-chevron-left"></i> 【Vue】Props的基礎概念與用法
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#根元件觸發事件的過程"><span class="nav-number">1.</span> <span class="nav-text">根元件觸發事件的過程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子元件呼叫根元件的-method"><span class="nav-number">2.</span> <span class="nav-text">子元件呼叫根元件的 method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件中"><span class="nav-number">2.1.</span> <span class="nav-text">子元件中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-template"><span class="nav-number">2.1.1.</span> <span class="nav-text">x-template</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那資料呢？"><span class="nav-number">3.</span> <span class="nav-text">那資料呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件"><span class="nav-number">3.1.</span> <span class="nav-text">子元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根元件"><span class="nav-number">3.2.</span> <span class="nav-text">根元件</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Myia</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myia</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

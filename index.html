@@ -175,6 +175,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/vue-emit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/16/vue-emit/" class="post-title-link" itemprop="url">【Vue】$emit，透過客製化事件把子元件的資料傳到根元件</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:17:15" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="/post_img/vue_emit.png" alt="外部資料傳遞進元件裡"></p>
+<p>如果我們想要從子元件傳遞資料到根元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到根元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。</p>
+<p>同樣的，子元件要投遞資料到根元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/16/vue-emit/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/15/vue-props-basic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -198,10 +275,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-03-15 16:50:42 / 修改時間：23:55:33" itemprop="dateCreated datePublished" datetime="2020-03-15T16:50:42+08:00">2020-03-15</time>
+              <time title="創建時間：2020-03-15 16:50:42" itemprop="dateCreated datePublished" datetime="2020-03-15T16:50:42+08:00">2020-03-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-03-16 23:01:08" itemprop="dateModified" datetime="2020-03-16T23:01:08+08:00">2020-03-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -953,7 +1036,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -966,7 +1049,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
