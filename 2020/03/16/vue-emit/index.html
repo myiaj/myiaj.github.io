@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://yoursite.com/post_img/vue_emit.png">
 <meta property="og:image" content="http://yoursite.com/post_img/web_materials/line_bright.png">
 <meta property="article:published_time" content="2020-03-16T15:16:07.000Z">
-<meta property="article:modified_time" content="2020-03-16T15:41:20.183Z">
+<meta property="article:modified_time" content="2020-03-16T15:47:29.335Z">
 <meta property="article:author" content="Myia">
 <meta property="article:tag" content="w3HexSchool">
 <meta name="twitter:card" content="summary">
@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:41:20" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
+              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:47:29" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +235,7 @@
 <p>同樣的，子元件要投遞資料到母元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
 <a id="more"></a>
 <p>&ensp;<br><img src="/post_img/web_materials/line_bright.png" alt="分隔線"></p>
-<h2 id="根元件觸發事件的過程"><a href="#根元件觸發事件的過程" class="headerlink" title="根元件觸發事件的過程"></a>根元件觸發事件的過程</h2><p>先來複習一下根元件綁定事件的過程：</p>
+<h2 id="元件觸發事件的過程"><a href="#元件觸發事件的過程" class="headerlink" title="元件觸發事件的過程"></a>元件觸發事件的過程</h2><p>先來複習一下根元件綁定事件的過程：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"incrementTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button-compo</span>&gt;</span><span class="tag">&lt;/<span class="name">button-compo</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>^</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">    cash: <span class="number">300</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        incrementTotal: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.cash++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -344,7 +344,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#根元件觸發事件的過程"><span class="nav-number">1.</span> <span class="nav-text">根元件觸發事件的過程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子元件呼叫根元件的-method"><span class="nav-number">2.</span> <span class="nav-text">子元件呼叫根元件的 method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件中"><span class="nav-number">2.1.</span> <span class="nav-text">子元件中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-template"><span class="nav-number">2.1.1.</span> <span class="nav-text">x-template</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那資料呢？"><span class="nav-number">3.</span> <span class="nav-text">那資料呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件"><span class="nav-number">3.1.</span> <span class="nav-text">子元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#母元件"><span class="nav-number">3.2.</span> <span class="nav-text">母元件</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#元件觸發事件的過程"><span class="nav-number">1.</span> <span class="nav-text">元件觸發事件的過程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子元件呼叫根元件的-method"><span class="nav-number">2.</span> <span class="nav-text">子元件呼叫根元件的 method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件中"><span class="nav-number">2.1.</span> <span class="nav-text">子元件中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-template"><span class="nav-number">2.1.1.</span> <span class="nav-text">x-template</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那資料呢？"><span class="nav-number">3.</span> <span class="nav-text">那資料呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子元件"><span class="nav-number">3.1.</span> <span class="nav-text">子元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#母元件"><span class="nav-number">3.2.</span> <span class="nav-text">母元件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
