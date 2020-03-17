@@ -175,6 +175,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/17/vue-event-bus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Myia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Myia's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/17/vue-event-bus/" class="post-title-link" itemprop="url">【Vue】用 event bus 跨多層元件的資訊傳遞</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-03-17 17:10:58 / 修改時間：21:04:50" itemprop="dateCreated datePublished" datetime="2020-03-17T17:10:58+08:00">2020-03-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="/post_img/vue-event-bus.png" alt="event bus"></p>
+<p>在 <a href="2020/03/16/vue-emit/">$emit</a> 的部分，有提過 <code>$emit</code> 是透過在子元件的事件被觸發時，建立一個客製化事件，並將這個客製化事件傳遞到母元件。在母元件中，我們只要將這個客製化事件綁定在 DOM 模板上，就能進一步地用這個客製化事件呼叫母元件的 method。在這個過程中，資料可以以參數的方式，隨著傳遞客製化事件到母元件的過程，一併將資料從子元件傳遞到母元件。</p>
+<p>event bus 也是依循著同樣的流程。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/17/vue-event-bus/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/vue-emit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -189,7 +266,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/16/vue-emit/" class="post-title-link" itemprop="url">【Vue】$emit，透過客製化事件把子元件的資料傳到根元件</a>
+            <a href="/2020/03/16/vue-emit/" class="post-title-link" itemprop="url">【Vue】$emit，透過客製化事件把子元件的資料傳到母元件</a>
         </h1>
 
         <div class="post-meta">
@@ -198,10 +275,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-03-16 23:16:07 / 修改時間：23:47:29" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
+              <time title="創建時間：2020-03-16 23:16:07" itemprop="dateCreated datePublished" datetime="2020-03-16T23:16:07+08:00">2020-03-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-03-17 00:59:44" itemprop="dateModified" datetime="2020-03-17T00:59:44+08:00">2020-03-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -225,7 +308,7 @@
       
           <p><img src="/post_img/vue_emit.png" alt="外部資料傳遞進元件裡"></p>
 <p>如果我們想要從子元件傳遞資料到母元件，我們必須使用$emit 建立一個客製化的事件，再透過這個事件，把資料投擲進到母元件。要怎麼做呢？概念其實和 props 差不多。當我們要把根元件的資料傳進子元件，需要透過 props 的方法，在子元件中建立一個接收資料的環境。</p>
-<p>同樣的，子元件要投遞資料到母元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫根元件的函式。</p>
+<p>同樣的，子元件要投遞資料到母元件，也會需要先在子元件打造一組工具(客製化事件、custom event)，讓 Vue 先建構一個客製化事件。最後，再透過 DOM 模板，綁定這個工具，進一步呼叫母元件的函式。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/16/vue-emit/#more" rel="contents">
@@ -902,76 +985,12 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/how-to-get-traffic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Myia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Myia's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/how-to-get-traffic/" class="post-title-link" itemprop="url">部落格導入流量的一些想法記錄：平台和搜尋的不同</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2020-03-03 14:16:35 / 修改時間：14:32:18" itemprop="dateCreated datePublished" datetime="2020-03-03T14:16:35+08:00">2020-03-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近在研究部落格經營。一方面是我自己也想寫，另一面正也和我準備投入的前端領域息息相關。多少了解一些，對工作多少應該會有些幫助吧！就算沒有幫助，對跟不同領域的人聊天應該也會有幫助（笑）。</p>
-<p>我一直以為經營部落格就是好好寫文章，可是現在因為競爭非常激烈（畢竟入手低嘛），經營部落格已經不單單是認真寫文章而已了。認真寫文章、有好的文章品質、圖片品質，這都是部落客的基本條件而已，更重要的是部落格要怎麼「導入流量」。導入流量有幾個方法：社群平台、文章平台、google 搜尋（也就是大家常常在說的 SEO ）。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/03/03/how-to-get-traffic/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
 
 
 
@@ -1036,7 +1055,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
